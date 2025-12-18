@@ -179,9 +179,15 @@ print(all_results)
 ####################################################################################
 
 final_model <- lmer(
-  Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head), 
+  Surprisal.head ~ 1 + regularity / plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head), 
   data = dat, 
   REML = TRUE
 )
 
 summary(final_model)
+
+install.packages("ggeffects")
+library(ggeffects)
+
+ggemmeans(final_model, c("regularity", "plurality")) |> plot() ### obter confidence intervals à volta da diferença. 
+

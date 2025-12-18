@@ -176,7 +176,16 @@ print(all_results)
 ####################################################################################
 
 final_model <- lmer(
-  Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num || set) + (1 + regularity_num * plurality_num || Head), 
+  Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num ||set) + (1 + regularity_num + plurality_num || Head), 
+  data = dat, 
+  REML = TRUE
+)
+
+summary(final_model)
+
+
+final_model <- lmer(
+  Surprisal.head ~ 1 + regularity / plurality + (1 + regularity_num ||set) + (1 + regularity_num + plurality_num || Head), 
   data = dat, 
   REML = TRUE
 )

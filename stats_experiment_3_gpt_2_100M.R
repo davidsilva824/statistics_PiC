@@ -184,3 +184,9 @@ final_model <- lmer(
 )
 
 summary(final_model)
+
+
+install.packages("ggeffects")
+library(ggeffects)
+
+ggemmeans(final_model, c("regularity", "plurality")) |> plot() ### obter confidence intervals à volta da diferença. 
