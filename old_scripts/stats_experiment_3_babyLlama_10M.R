@@ -167,8 +167,6 @@ all_results <- rbind(df_g1, df_g2, df_g3, df_g4)
 # keep one row per formula (baseline duplication)
 all_results <- all_results[!duplicated(all_results$formula), ]
 
-# sanity check: should be 97
-cat("Total unique models:", nrow(all_results), "\n")
 
 # order: NA AIC (errors) go to bottom
 all_results <- all_results[order(is.na(all_results$AIC), all_results$AIC), ]
@@ -178,7 +176,7 @@ print(all_results)
 ####################################################################################
 
 final_model <- lmer(
-  Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality_num || Head), 
+  Surprisal.head ~ 1 + regularity * plurality + (1 + regularity|  set) + (1 + plurality_num || Head), 
   data = dat, 
   REML = TRUE
 )

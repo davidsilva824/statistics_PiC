@@ -6,7 +6,7 @@ setwd("C:/Users/Admin/Desktop/Dissertação/código/satistics_PiC/Statistics_PiC
 ### change this file according to the location of this folder. 
 
 # Load data
-dat <- read.csv("results_experiment_3_gpt_2_10M.csv", check.names = TRUE)
+dat <- read.csv("results_experiment_3_babble.csv", check.names = TRUE)
 
 # Fix categories and factors.
 # Creased two new columns for the conditions Regularity and Plurality. 
@@ -24,7 +24,6 @@ dat <- dat %>%
 # "Irregular", "Regular"  what gets assigned when TRUE,FALSE in the "if", in the column of the regularity. 
 
 
-# --- CHANGES YOU ASKED FOR (contrasts + numeric variables) ---
 contrasts(dat$regularity) <- c(-0.5, 0.5)
 contrasts(dat$plurality)  <- c(-0.5, 0.5)
 
@@ -179,15 +178,9 @@ print(all_results)
 ####################################################################################
 
 final_model <- lmer(
-  Surprisal.head ~ 1 + regularity / plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head), 
+  Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 +  plurality | Head), 
   data = dat, 
   REML = TRUE
 )
 
 summary(final_model)
-
-install.packages("ggeffects")
-library(ggeffects)
-
-ggemmeans(final_model, c("regularity", "plurality")) |> plot() ### obter confidence intervals à volta da diferença. 
-

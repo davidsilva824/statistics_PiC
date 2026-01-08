@@ -1,0 +1,920 @@
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity * plurality + (1 + plurality |      set) + (1 + regularity_num || Head)
+   Data: data_babble
+
+REML criterion at convergence: 732.1
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.1791 -0.6310 -0.0144  0.6567  3.2574 
+
+Random effects:
+ Groups   Name           Variance Std.Dev. Corr 
+ set      (Intercept)    1.2210   1.1050        
+          plurality1     0.2102   0.4585   -1.00
+ Head     (Intercept)    3.1362   1.7709        
+ Head.1   regularity_num 0.6490   0.8056        
+ Residual                0.9324   0.9656        
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                        Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)             12.17778    0.56160  20.91122  21.684 8.18e-16 ***
+regularity1              0.06471    0.25101  13.00018   0.258  0.80060    
+plurality1               0.53731    0.17794  16.79121   3.020  0.00781 ** 
+regularity1:plurality1  -0.74954    0.25807 180.48128  -2.904  0.00414 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 plrlt1
+regularity1  0.000              
+plurality1  -0.362  0.000       
+rglrty1:pl1  0.000  0.000  0.000
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity/plurality + (1 + plurality |      set) + (1 + regularity_num || Head)
+   Data: data_babble
+
+REML criterion at convergence: 732.1
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.1791 -0.6310 -0.0144  0.6567  3.2574 
+
+Random effects:
+ Groups   Name           Variance Std.Dev. Corr 
+ set      (Intercept)    1.2210   1.1050        
+          plurality1     0.2102   0.4585   -1.00
+ Head     (Intercept)    3.1362   1.7709        
+ Head.1   regularity_num 0.6490   0.8056        
+ Residual                0.9324   0.9656        
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                               Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)                    12.17778    0.56160 20.91122  21.684 8.18e-16 ***
+regularity1                     0.06471    0.25101 13.00018   0.258 0.800603    
+regularityRegular:plurality1    0.91208    0.21980 36.43421   4.150 0.000191 ***
+regularityIrregular:plurality1  0.16254    0.21980 36.43421   0.740 0.464341    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 rglR:1
+regularity1  0.000              
+rglrtyRgl:1 -0.293  0.000       
+rglrtyIrr:1 -0.293  0.000  0.311
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num ||      set) + (1 + plurality_num || Head)
+   Data: data_llama_100
+
+REML criterion at convergence: 633.5
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.99592 -0.56961  0.00849  0.55654  2.66402 
+
+Random effects:
+ Groups   Name           Variance Std.Dev.
+ set      (Intercept)    0.1823   0.4269  
+ set.1    regularity_num 0.2637   0.5135  
+ Head     (Intercept)    3.3712   1.8361  
+ Head.1   plurality_num  0.6266   0.7916  
+ Residual                0.5733   0.7572  
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                       Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)             13.3945     0.5063  14.2829  26.453 1.54e-13 ***
+regularity1             -0.1090     0.1705  12.9996  -0.639  0.53362    
+plurality1               0.6242     0.2345  13.0002   2.662  0.01957 *  
+regularity1:plurality1  -0.6692     0.2024 165.5560  -3.307  0.00116 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 plrlt1
+regularity1 0.000               
+plurality1  0.000  0.000        
+rglrty1:pl1 0.000  0.000  0.000 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity/plurality + (1 + regularity_num ||      set) + (1 + plurality_num || Head)
+   Data: data_llama_100
+
+REML criterion at convergence: 633.5
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.99592 -0.56961  0.00849  0.55654  2.66402 
+
+Random effects:
+ Groups   Name           Variance Std.Dev.
+ set      (Intercept)    0.1823   0.4269  
+ set.1    regularity_num 0.2637   0.5135  
+ Head     (Intercept)    3.3712   1.8361  
+ Head.1   plurality_num  0.6266   0.7916  
+ Residual                0.5733   0.7572  
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                               Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)                     13.3945     0.5063 14.2829  26.453 1.54e-13 ***
+regularity1                     -0.1090     0.1705 12.9996  -0.639  0.53362    
+regularityRegular:plurality1     0.9588     0.2554 18.2410   3.754  0.00142 ** 
+regularityIrregular:plurality1   0.2896     0.2554 18.2410   1.134  0.27153    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 rglR:1
+regularity1 0.000               
+rglrtyRgl:1 0.000  0.000        
+rglrtyIrr:1 0.000  0.000  0.686 
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity |      set) + (1 + plurality | Head)
+   Data: data_llama_10
+
+REML criterion at convergence: 591.3
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-3.13796 -0.61337 -0.04624  0.54054  2.42355 
+
+Random effects:
+ Groups   Name        Variance Std.Dev. Corr
+ set      (Intercept) 0.08199  0.2863       
+          regularity1 0.50201  0.7085   0.89
+ Head     (Intercept) 5.05651  2.2487       
+          plurality1  0.58612  0.7656   0.02
+ Residual             0.46371  0.6810       
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                       Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)             13.8894     0.6075  13.3951  22.862 4.02e-12 ***
+regularity1             -0.1539     0.2101  13.0000  -0.733   0.4767    
+plurality1               0.5327     0.2239  13.0003   2.379   0.0334 *  
+regularity1:plurality1  -0.9516     0.1820 166.1178  -5.229 5.08e-07 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 plrlt1
+regularity1 0.102               
+plurality1  0.022  0.000        
+rglrty1:pl1 0.000  0.000  0.000 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity/plurality + (1 + regularity |      set) + (1 + plurality | Head)
+   Data: data_llama_10
+
+REML criterion at convergence: 591.3
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-3.13797 -0.61337 -0.04624  0.54058  2.42368 
+
+Random effects:
+ Groups   Name        Variance Std.Dev. Corr
+ set      (Intercept) 0.08199  0.2863       
+          regularity1 0.50199  0.7085   0.89
+ Head     (Intercept) 5.05710  2.2488       
+          plurality1  0.58614  0.7656   0.02
+ Residual             0.46371  0.6810       
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                               Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)                    13.88945    0.60758 13.39287  22.860 4.03e-12 ***
+regularity1                    -0.15394    0.21009 13.00031  -0.733 0.476707    
+regularityRegular:plurality1    1.00846    0.24172 17.60985   4.172 0.000597 ***
+regularityIrregular:plurality1  0.05689    0.24172 17.60985   0.235 0.816657    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 rglR:1
+regularity1 0.102               
+rglrtyRgl:1 0.020  0.000        
+rglrtyIrr:1 0.020  0.000  0.717 
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 +      plurality_num || Head)
+   Data: data_gpt2_100
+
+REML criterion at convergence: 811
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.2317 -0.4599  0.0372  0.5583  2.6578 
+
+Random effects:
+ Groups   Name          Variance Std.Dev.
+ set      (Intercept)   0.5813   0.7624  
+ Head     (Intercept)   2.0805   1.4424  
+ Head.1   plurality_num 1.1554   1.0749  
+ Residual               1.4935   1.2221  
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                       Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)             14.2007     0.4436  18.7259  32.011  < 2e-16 ***
+regularity1              0.1152     0.1633 181.0950   0.705  0.48144    
+plurality1               1.3002     0.3305  13.0000   3.935  0.00171 ** 
+regularity1:plurality1  -0.7643     0.3266 181.0950  -2.340  0.02038 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 plrlt1
+regularity1 0.000               
+plurality1  0.000  0.000        
+rglrty1:pl1 0.000  0.000  0.000 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity/plurality + (1 | set) + (1 +      plurality_num || Head)
+   Data: data_gpt2_100
+
+REML criterion at convergence: 811
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.2317 -0.4599  0.0372  0.5583  2.6578 
+
+Random effects:
+ Groups   Name          Variance Std.Dev.
+ set      (Intercept)   0.5813   0.7624  
+ Head     (Intercept)   2.0805   1.4424  
+ Head.1   plurality_num 1.1554   1.0749  
+ Residual               1.4935   1.2221  
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                               Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)                     14.2007     0.4436  18.7259  32.011  < 2e-16 ***
+regularity1                      0.1152     0.1633 181.0950   0.705 0.481440    
+regularityRegular:plurality1     1.6823     0.3686  20.0396   4.564 0.000188 ***
+regularityIrregular:plurality1   0.9181     0.3686  20.0396   2.491 0.021643 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 rglR:1
+regularity1 0.000               
+rglrtyRgl:1 0.000  0.000        
+rglrtyIrr:1 0.000  0.000  0.607 
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num *      plurality_num || set) + (1 + plurality_num || Head)
+   Data: data_gpt2_10
+
+REML criterion at convergence: 750.8
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.1799 -0.5363 -0.0104  0.5057  3.5195 
+
+Random effects:
+ Groups   Name                         Variance Std.Dev.
+ set      (Intercept)                  0.5279   0.7266  
+ set.1    regularity_num               0.9824   0.9912  
+ set.2    plurality_num                0.2086   0.4567  
+ set.3    regularity_num:plurality_num 2.0168   1.4201  
+ Head     (Intercept)                  5.7043   2.3884  
+ Head.1   plurality_num                0.4518   0.6722  
+ Residual                              0.8290   0.9105  
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                       Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)            14.48346    0.66997 15.23235  21.618 7.57e-13 ***
+regularity1             0.04105    0.29151 12.99950   0.141  0.89017    
+plurality1              0.88589    0.24895 16.65550   3.558  0.00248 ** 
+regularity1:plurality1 -1.04188    0.45086 13.00050  -2.311  0.03788 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 plrlt1
+regularity1 0.000               
+plurality1  0.000  0.000        
+rglrty1:pl1 0.000  0.000  0.000 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity/plurality + (1 + regularity_num *      plurality_num || set) + (1 + plurality_num || Head)
+   Data: data_gpt2_10
+
+REML criterion at convergence: 750.8
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.1799 -0.5363 -0.0104  0.5057  3.5195 
+
+Random effects:
+ Groups   Name                         Variance Std.Dev.
+ set      (Intercept)                  0.5280   0.7266  
+ set.1    regularity_num               0.9824   0.9912  
+ set.2    plurality_num                0.2086   0.4567  
+ set.3    regularity_num:plurality_num 2.0168   1.4201  
+ Head     (Intercept)                  5.7041   2.3883  
+ Head.1   plurality_num                0.4518   0.6721  
+ Residual                              0.8290   0.9105  
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                               Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)                    14.48346    0.66996 15.23285  21.618 7.57e-13 ***
+regularity1                     0.04105    0.29151 12.99923   0.141 0.890167    
+regularityRegular:plurality1    1.40683    0.33584 29.63873   4.189 0.000231 ***
+regularityIrregular:plurality1  0.36495    0.33584 29.63873   1.087 0.285945    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 rglR:1
+regularity1 0.000               
+rglrtyRgl:1 0.000  0.000        
+rglrtyIrr:1 0.000  0.000  0.099 
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num ||      set) + (1 + plurality_num || Head)
+   Data: data_neo_1_3
+
+REML criterion at convergence: 837.5
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.84414 -0.58337 -0.03697  0.68855  2.78615 
+
+Random effects:
+ Groups   Name           Variance Std.Dev.
+ set      (Intercept)    0.4627   0.6802  
+ set.1    regularity_num 0.7668   0.8757  
+ Head     (Intercept)    1.3992   1.1829  
+ Head.1   plurality_num  0.5100   0.7141  
+ Residual                1.7253   1.3135  
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                       Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)             12.2590     0.3751  18.9231  32.683   <2e-16 ***
+regularity1             -0.0787     0.2925  13.0001  -0.269   0.7921    
+plurality1               0.7146     0.2593  12.9999   2.756   0.0164 *  
+regularity1:plurality1  -0.5512     0.3510 168.5748  -1.570   0.1182    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 plrlt1
+regularity1 0.000               
+plurality1  0.000  0.000        
+rglrty1:pl1 0.000  0.000  0.000 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity/plurality + (1 + regularity_num ||      set) + (1 + plurality_num || Head)
+   Data: data_neo_1_3
+
+REML criterion at convergence: 837.5
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.84414 -0.58337 -0.03697  0.68855  2.78615 
+
+Random effects:
+ Groups   Name           Variance Std.Dev.
+ set      (Intercept)    0.4627   0.6802  
+ set.1    regularity_num 0.7668   0.8757  
+ Head     (Intercept)    1.3992   1.1829  
+ Head.1   plurality_num  0.5100   0.7141  
+ Residual                1.7253   1.3135  
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                               Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)                     12.2590     0.3751 18.9231  32.683  < 2e-16 ***
+regularity1                     -0.0787     0.2925 13.0001  -0.269  0.79213    
+regularityRegular:plurality1     0.9902     0.3131 27.2029   3.162  0.00382 ** 
+regularityIrregular:plurality1   0.4390     0.3131 27.2029   1.402  0.17224    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 rglR:1
+regularity1 0.000               
+rglrtyRgl:1 0.000  0.000        
+rglrtyIrr:1 0.000  0.000  0.372 
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num ||      set) + (1 + plurality_num || Head)
+   Data: data_neo_125
+
+REML criterion at convergence: 791.9
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.5898 -0.5450  0.0258  0.5050  3.2378 
+
+Random effects:
+ Groups   Name           Variance Std.Dev.
+ set      (Intercept)    0.4869   0.6978  
+ set.1    regularity_num 0.4882   0.6987  
+ Head     (Intercept)    2.2333   1.4944  
+ Head.1   plurality_num  0.9715   0.9857  
+ Residual                1.2831   1.1327  
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                       Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)             12.1449     0.4473  17.6001  27.155 8.17e-16 ***
+regularity1              0.3909     0.2404  13.0003   1.626    0.128    
+plurality1               0.7569     0.3038  12.9997   2.491    0.027 *  
+regularity1:plurality1   0.2606     0.3027 168.1395   0.861    0.391    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 plrlt1
+regularity1 0.000               
+plurality1  0.000  0.000        
+rglrty1:pl1 0.000  0.000  0.000 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity/plurality + (1 + regularity_num ||      set) + (1 + plurality_num || Head)
+   Data: data_neo_125
+
+REML criterion at convergence: 791.9
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.5898 -0.5450  0.0258  0.5050  3.2378 
+
+Random effects:
+ Groups   Name           Variance Std.Dev.
+ set      (Intercept)    0.4869   0.6978  
+ set.1    regularity_num 0.4882   0.6987  
+ Head     (Intercept)    2.2333   1.4944  
+ Head.1   plurality_num  0.9715   0.9857  
+ Residual                1.2831   1.1327  
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                               Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)                     12.1449     0.4473 17.6001  27.155 8.17e-16 ***
+regularity1                      0.3909     0.2404 13.0003   1.626   0.1279    
+regularityRegular:plurality1     0.6266     0.3394 20.1580   1.846   0.0796 .  
+regularityIrregular:plurality1   0.8872     0.3394 20.1580   2.614   0.0166 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 rglR:1
+regularity1 0.000               
+rglrtyRgl:1 0.000  0.000        
+rglrtyIrr:1 0.000  0.000  0.602 
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 +      plurality | Head)
+   Data: data_neo_2_7
+
+REML criterion at convergence: 778.8
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.80133 -0.50374  0.00809  0.55407  2.82361 
+
+Random effects:
+ Groups   Name        Variance Std.Dev. Corr
+ set      (Intercept) 0.7542   0.8684       
+ Head     (Intercept) 1.2077   1.0990       
+          plurality1  0.6789   0.8239   0.57
+ Residual             1.3375   1.1565       
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                        Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)             12.21582    0.38224  22.09432  31.959  < 2e-16 ***
+regularity1             -0.09534    0.15455 181.19809  -0.617  0.53809    
+plurality1               0.83899    0.26903  12.99992   3.119  0.00815 ** 
+regularity1:plurality1  -0.67376    0.30909 181.19809  -2.180  0.03056 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 plrlt1
+regularity1 0.000               
+plurality1  0.359  0.000        
+rglrty1:pl1 0.000  0.000  0.000 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity/plurality + (1 | set) + (1 +      plurality | Head)
+   Data: data_neo_2_7
+
+REML criterion at convergence: 778.8
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.80133 -0.50374  0.00809  0.55407  2.82361 
+
+Random effects:
+ Groups   Name        Variance Std.Dev. Corr
+ set      (Intercept) 0.7542   0.8684       
+ Head     (Intercept) 1.2077   1.0990       
+          plurality1  0.6789   0.8239   0.57
+ Residual             1.3375   1.1565       
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                                Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)                     12.21582    0.38224  22.09432  31.959  < 2e-16 ***
+regularity1                     -0.09534    0.15455 181.19809  -0.617 0.538090    
+regularityRegular:plurality1     1.17587    0.31026  22.81753   3.790 0.000957 ***
+regularityIrregular:plurality1   0.50211    0.31026  22.81753   1.618 0.119330    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 rglR:1
+regularity1 0.000               
+rglrtyRgl:1 0.311  0.000        
+rglrtyIrr:1 0.311  0.000  0.504 
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num ||      set) + (1 + regularity_num * plurality_num || Head)
+   Data: data_wee_lg
+
+REML criterion at convergence: 771.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.2695 -0.4700 -0.0587  0.5501  2.8774 
+
+Random effects:
+ Groups   Name                         Variance Std.Dev.
+ set      (Intercept)                  0.1893   0.4350  
+ set.1    regularity_num               0.7460   0.8637  
+ Head     (Intercept)                  4.5355   2.1297  
+ Head.1   regularity_num               0.1689   0.4110  
+ Head.2   plurality_num                0.9968   0.9984  
+ Head.3   regularity_num:plurality_num 1.6674   1.2913  
+ Residual                              1.0103   1.0051  
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                       Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)            14.02018    0.58480 13.90909  23.974 1.03e-12 ***
+regularity1             0.02385    0.28877 11.81525   0.083    0.936    
+plurality1              0.34863    0.29873 13.00003   1.167    0.264    
+regularity1:plurality1 -0.64242    0.43733 12.99974  -1.469    0.166    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 plrlt1
+regularity1 0.000               
+plurality1  0.000  0.000        
+rglrty1:pl1 0.000  0.000  0.000 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity/plurality + (1 + regularity_num ||      set) + (1 + regularity_num * plurality_num || Head)
+   Data: data_wee_lg
+
+REML criterion at convergence: 771.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.2695 -0.4700 -0.0587  0.5501  2.8774 
+
+Random effects:
+ Groups   Name                         Variance Std.Dev.
+ set      (Intercept)                  0.1893   0.4350  
+ set.1    regularity_num               0.7460   0.8637  
+ Head     (Intercept)                  4.5355   2.1297  
+ Head.1   regularity_num               0.1689   0.4110  
+ Head.2   plurality_num                0.9969   0.9984  
+ Head.3   regularity_num:plurality_num 1.6673   1.2913  
+ Residual                              1.0103   1.0051  
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                               Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)                    14.02018    0.58480 13.90874  23.974 1.04e-12 ***
+regularity1                     0.02385    0.28877 11.81514   0.083    0.936    
+regularityRegular:plurality1    0.66984    0.37021 23.82279   1.809    0.083 .  
+regularityIrregular:plurality1  0.02742    0.37021 23.82279   0.074    0.942    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 rglR:1
+regularity1 0.000               
+rglrtyRgl:1 0.000  0.000        
+rglrtyIrr:1 0.000  0.000  0.302 
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num *      plurality_num || set) + (1 + plurality_num || Head)
+   Data: data_wee_md
+
+REML criterion at convergence: 634.8
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-3.00593 -0.50154  0.01702  0.53713  2.74114 
+
+Random effects:
+ Groups   Name                         Variance Std.Dev.
+ set      (Intercept)                  0.06392  0.2528  
+ set.1    regularity_num               0.15430  0.3928  
+ set.2    plurality_num                0.15491  0.3936  
+ set.3    regularity_num:plurality_num 0.65936  0.8120  
+ Head     (Intercept)                  4.01986  2.0050  
+ Head.1   plurality_num                0.41712  0.6458  
+ Residual                              0.56731  0.7532  
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                       Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)             13.1104     0.5424 13.2499  24.170 2.39e-12 ***
+regularity1             -0.3403     0.1454 13.0000  -2.340   0.0359 *  
+plurality1               0.3179     0.2258 13.8028   1.408   0.1813    
+regularity1:plurality1  -0.5064     0.2960 12.9998  -1.711   0.1108    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 plrlt1
+regularity1 0.000               
+plurality1  0.000  0.000        
+rglrty1:pl1 0.000  0.000  0.000 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity/plurality + (1 + regularity_num *      plurality_num || set) + (1 + plurality_num || Head)
+   Data: data_wee_md
+
+REML criterion at convergence: 634.8
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-3.00594 -0.50154  0.01702  0.53714  2.74114 
+
+Random effects:
+ Groups   Name                         Variance Std.Dev.
+ set      (Intercept)                  0.06392  0.2528  
+ set.1    regularity_num               0.15430  0.3928  
+ set.2    plurality_num                0.15491  0.3936  
+ set.3    regularity_num:plurality_num 0.65936  0.8120  
+ Head     (Intercept)                  4.01983  2.0050  
+ Head.1   plurality_num                0.41712  0.6458  
+ Residual                              0.56731  0.7532  
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                               Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)                    13.11039    0.54243 13.25001  24.170 2.39e-12 ***
+regularity1                    -0.34031    0.14544 13.00007  -2.340   0.0359 *  
+regularityRegular:plurality1    0.57108    0.26999 23.58726   2.115   0.0452 *  
+regularityIrregular:plurality1  0.06466    0.26999 23.58726   0.239   0.8128    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 rglR:1
+regularity1 0.000               
+rglrtyRgl:1 0.000  0.000        
+rglrtyIrr:1 0.000  0.000  0.399 
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num ||      set) + (1 + regularity_num + plurality_num || Head)
+   Data: data_wee_sm
+
+REML criterion at convergence: 436.8
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.61186 -0.52329  0.06465  0.59378  2.65587 
+
+Random effects:
+ Groups   Name           Variance Std.Dev.
+ set      (Intercept)    0.01382  0.1175  
+ set.1    regularity_num 0.05479  0.2341  
+ Head     (Intercept)    5.02627  2.2419  
+ Head.1   regularity_num 0.14770  0.3843  
+ Head.2   plurality_num  0.17831  0.4223  
+ Residual                0.22164  0.4708  
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                       Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)             13.5661     0.6008  13.0616  22.579 7.51e-12 ***
+regularity1             -0.4609     0.1357  13.4629  -3.395  0.00457 ** 
+plurality1               0.3584     0.1292  13.0037   2.774  0.01581 *  
+regularity1:plurality1  -0.5153     0.1258 152.5350  -4.095 6.82e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 plrlt1
+regularity1 0.000               
+plurality1  0.000  0.000        
+rglrty1:pl1 0.000  0.000  0.000 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity/plurality + (1 + regularity_num ||      set) + (1 + regularity_num + plurality_num || Head)
+   Data: data_wee_sm
+
+REML criterion at convergence: 436.8
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.61184 -0.52330  0.06464  0.59381  2.65587 
+
+Random effects:
+ Groups   Name           Variance Std.Dev.
+ set      (Intercept)    0.01382  0.1176  
+ set.1    regularity_num 0.05482  0.2341  
+ Head     (Intercept)    5.02551  2.2418  
+ Head.1   regularity_num 0.14760  0.3842  
+ Head.2   plurality_num  0.17835  0.4223  
+ Residual                0.22164  0.4708  
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                               Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)                     13.5661     0.6008 13.0646  22.581 7.47e-12 ***
+regularity1                     -0.4609     0.1357 13.4690  -3.396 0.004566 ** 
+regularityRegular:plurality1     0.6160     0.1437 19.7995   4.286 0.000367 ***
+regularityIrregular:plurality1   0.1007     0.1437 19.7995   0.701 0.491621    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 rglR:1
+regularity1 0.000               
+rglrtyRgl:1 0.000  0.000        
+rglrtyIrr:1 0.000  0.000  0.617 
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity * plurality + (1 + plurality_num ||      set) + (1 | Head)
+   Data: data_bert_100
+
+REML criterion at convergence: 1131.7
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.65294 -0.66898 -0.05509  0.58800  2.54003 
+
+Random effects:
+ Groups   Name          Variance Std.Dev.
+ set      (Intercept)   4.578    2.140   
+ set.1    plurality_num 1.399    1.183   
+ Head     (Intercept)   7.358    2.713   
+ Residual               6.612    2.571   
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                        Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)             21.48695    0.93919  22.23282  22.878  < 2e-16 ***
+regularity1              0.93773    0.34362 180.94045   2.729  0.00698 ** 
+plurality1               0.20033    0.46688  13.00002   0.429  0.67489    
+regularity1:plurality1  -0.02405    0.68724 180.94045  -0.035  0.97212    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 plrlt1
+regularity1 0.000               
+plurality1  0.000  0.000        
+rglrty1:pl1 0.000  0.000  0.000 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity/plurality + (1 + plurality_num ||      set) + (1 | Head)
+   Data: data_bert_100
+
+REML criterion at convergence: 1131.7
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.65294 -0.66898 -0.05509  0.58800  2.54003 
+
+Random effects:
+ Groups   Name          Variance Std.Dev.
+ set      (Intercept)   4.578    2.140   
+ set.1    plurality_num 1.399    1.183   
+ Head     (Intercept)   7.358    2.713   
+ Residual               6.612    2.571   
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                               Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)                     21.4869     0.9392  22.2328  22.878  < 2e-16 ***
+regularity1                      0.9377     0.3436 180.9405   2.729  0.00698 ** 
+regularityRegular:plurality1     0.2124     0.5797  30.2601   0.366  0.71667    
+regularityIrregular:plurality1   0.1883     0.5797  30.2601   0.325  0.74754    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 rglR:1
+regularity1 0.000               
+rglrtyRgl:1 0.000  0.000        
+rglrtyIrr:1 0.000  0.000  0.297 
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num *      plurality_num || set) + (1 + regularity + plurality | Head)
+   Data: data_bert_10
+
+REML criterion at convergence: 1088
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.4400 -0.4953 -0.0464  0.5023  3.5606 
+
+Random effects:
+ Groups   Name                         Variance Std.Dev. Corr     
+ set      (Intercept)                  4.580    2.140             
+ set.1    regularity_num               4.713    2.171             
+ set.2    plurality_num                1.158    1.076             
+ set.3    regularity_num:plurality_num 7.702    2.775             
+ Head     (Intercept)                  6.531    2.556             
+          regularity1                  1.798    1.341    0.08     
+          plurality1                   2.068    1.438    0.27 0.95
+ Residual                              3.960    1.990             
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                       Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)             21.3269     0.9008 23.5326  23.677   <2e-16 ***
+regularity1              0.2008     0.7320 17.8788   0.274    0.787    
+plurality1               0.5167     0.5488 17.0249   0.942    0.360    
+regularity1:plurality1  -0.7616     0.9127 13.0002  -0.834    0.419    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 plrlt1
+regularity1 0.030               
+plurality1  0.145  0.326        
+rglrty1:pl1 0.000  0.000  0.000 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + regularity/plurality + (1 + regularity_num *      plurality_num || set) + (1 + regularity + plurality | Head)
+   Data: data_bert_10
+
+REML criterion at convergence: 1088
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.4400 -0.4953 -0.0464  0.5023  3.5606 
+
+Random effects:
+ Groups   Name                         Variance Std.Dev. Corr     
+ set      (Intercept)                  4.581    2.140             
+ set.1    regularity_num               4.713    2.171             
+ set.2    plurality_num                1.158    1.076             
+ set.3    regularity_num:plurality_num 7.702    2.775             
+ Head     (Intercept)                  6.531    2.556             
+          regularity1                  1.798    1.341    0.08     
+          plurality1                   2.068    1.438    0.27 0.95
+ Residual                              3.960    1.990             
+Number of obs: 224, groups:  set, 14; Head, 14
+
+Fixed effects:
+                               Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)                     21.3269     0.9007 23.5333  23.677   <2e-16 ***
+regularity1                      0.2008     0.7320 17.8780   0.274    0.787    
+regularityRegular:plurality1     0.8975     0.7137 29.9542   1.258    0.218    
+regularityIrregular:plurality1   0.1359     0.7137 29.9542   0.190    0.850    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rglrt1 rglR:1
+regularity1 0.030               
+rglrtyRgl:1 0.111  0.250        
+rglrtyIrr:1 0.111  0.250  0.182 

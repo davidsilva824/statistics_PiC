@@ -1,0 +1,430 @@
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + sibilance * plurality + (1 + sibilance |      set) + (1 | Head)
+   Data: data_ph_no_spaces_e2
+
+REML criterion at convergence: 374.2
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-1.85153 -0.52591  0.06355  0.47806  2.69560 
+
+Random effects:
+ Groups   Name        Variance Std.Dev. Corr 
+ set      (Intercept) 0.001682 0.04101       
+          sibilance1  2.095809 1.44769  -1.00
+ Head     (Intercept) 4.932549 2.22093       
+ Residual             2.069145 1.43845       
+Number of obs: 88, groups:  set, 22; Head, 21
+
+Fixed effects:
+                      Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)           14.11177    0.50890 19.87445  27.730   <2e-16 ***
+sibilance1            -0.60634    0.43510 21.00097  -1.394    0.178    
+plurality1             0.09205    0.30668 42.87029   0.300    0.766    
+sibilance1:plurality1  0.80492    0.61336 42.87029   1.312    0.196    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) sblnc1 plrlt1
+sibilance1  -0.012              
+plurality1   0.000  0.000       
+sblnc1:plr1  0.000  0.000  0.000
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + sibilance/plurality + (1 + sibilance | set) +      (1 | Head)
+   Data: data_ph_no_spaces_e2
+
+REML criterion at convergence: 374.2
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-1.85153 -0.52591  0.06355  0.47806  2.69560 
+
+Random effects:
+ Groups   Name        Variance Std.Dev. Corr 
+ set      (Intercept) 0.001682 0.04101       
+          sibilance1  2.095809 1.44769  -1.00
+ Head     (Intercept) 4.932549 2.22093       
+ Residual             2.069145 1.43845       
+Number of obs: 88, groups:  set, 22; Head, 21
+
+Fixed effects:
+                                Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)                      14.1118     0.5089 19.8744  27.730   <2e-16 ***
+sibilance1                       -0.6063     0.4351 21.0010  -1.394    0.178    
+sibilanceNonSibilant:plurality1  -0.3104     0.4337 42.8703  -0.716    0.478    
+sibilanceSibilant:plurality1      0.4945     0.4337 42.8703   1.140    0.261    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) sblnc1 sbNS:1
+sibilance1  -0.012              
+sblncNnSb:1  0.000  0.000       
+sblncSbln:1  0.000  0.000  0.000
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + sibilance * plurality + (1 + sibilance_num *      plurality_num || set) + (1 + sibilance_num * plurality_num ||      Head)
+   Data: data_ph_no_spaces_e3
+
+REML criterion at convergence: 374.9
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-0.87157 -0.06480 -0.01471  0.06110  0.72092 
+
+Random effects:
+ Groups   Name                        Variance Std.Dev.
+ set      (Intercept)                 0.001406 0.03749 
+ set.1    sibilance_num               0.002652 0.05150 
+ set.2    plurality_num               0.467262 0.68357 
+ set.3    sibilance_num:plurality_num 5.762310 2.40048 
+ Head     (Intercept)                 9.481816 3.07926 
+ Head.1   sibilance_num               3.715157 1.92747 
+ Head.2   plurality_num               1.139863 1.06764 
+ Head.3   sibilance_num:plurality_num 4.713742 2.17112 
+ Residual                             0.037224 0.19293 
+Number of obs: 88, groups:  set, 22; Head, 21
+
+Fixed effects:
+                      Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)            14.4565     0.6723 19.9998  21.502  2.7e-15 ***
+sibilance1             -1.2139     0.4228 20.0063  -2.871  0.00944 ** 
+plurality1             -1.0584     0.2786 20.4632  -3.798  0.00109 ** 
+sibilance1:plurality1   1.7038     0.7049 20.4474   2.417  0.02509 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) sblnc1 plrlt1
+sibilance1  0.000               
+plurality1  0.000  0.000        
+sblnc1:plr1 0.000  0.000  0.000 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + sibilance/plurality + (1 + sibilance_num *      plurality_num || set) + (1 + sibilance_num * plurality_num ||      Head)
+   Data: data_ph_no_spaces_e3
+
+REML criterion at convergence: 374.9
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-0.90195 -0.06705 -0.01523  0.06323  0.74607 
+
+Random effects:
+ Groups   Name                        Variance  Std.Dev.
+ set      (Intercept)                 7.461e-04 0.027315
+ set.1    sibilance_num               1.322e-05 0.003637
+ set.2    plurality_num               4.647e-01 0.681673
+ set.3    sibilance_num:plurality_num 5.752e+00 2.398351
+ Head     (Intercept)                 9.482e+00 3.079305
+ Head.1   sibilance_num               3.715e+00 1.927475
+ Head.2   plurality_num               1.140e+00 1.067628
+ Head.3   sibilance_num:plurality_num 4.713e+00 2.170940
+ Residual                             3.986e-02 0.199647
+Number of obs: 88, groups:  set, 22; Head, 21
+
+Fixed effects:
+                                Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)                      14.4565     0.6723 19.9989  21.502  2.7e-15 ***
+sibilance1                       -1.2139     0.4228 20.0063  -2.871 0.009440 ** 
+sibilanceNonSibilant:plurality1  -1.9103     0.4493 38.8379  -4.252 0.000129 ***
+sibilanceSibilant:plurality1     -0.2064     0.4493 38.8379  -0.460 0.648419    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) sblnc1 sbNS:1
+sibilance1   0.000              
+sblncNnSb:1  0.000  0.000       
+sblncSbln:1  0.000  0.000 -0.231
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + sibilance * plurality + (1 + plurality_num ||      set) + (1 + sibilance_num * plurality_num || Head)
+   Data: data_ph_with_spaces_e2
+
+REML criterion at convergence: 386.8
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-1.07529 -0.07763 -0.00135  0.05413  0.99171 
+
+Random effects:
+ Groups   Name                        Variance  Std.Dev. 
+ set      (Intercept)                 3.015e-03 0.0549115
+ set.1    plurality_num               1.986e+00 1.4092274
+ Head     (Intercept)                 8.277e+00 2.8768951
+ Head.1   sibilance_num               6.626e+00 2.5741746
+ Head.2   plurality_num               2.101e-08 0.0001449
+ Head.3   sibilance_num:plurality_num 1.163e+01 3.4099238
+ Residual                             3.080e-02 0.1754976
+Number of obs: 88, groups:  set, 22; Head, 21
+
+Fixed effects:
+                      Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)           14.02855    0.62819 19.99935  22.332  1.3e-15 ***
+sibilance1            -0.68844    0.56300 19.99736  -1.223    0.236    
+plurality1             0.33707    0.30277 20.99954   1.113    0.278    
+sibilance1:plurality1  0.05472    0.74794 19.99575   0.073    0.942    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) sblnc1 plrlt1
+sibilance1  0.000               
+plurality1  0.000  0.000        
+sblnc1:plr1 0.000  0.000  0.000 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + sibilance/plurality + (1 + plurality_num ||      set) + (1 + sibilance_num * plurality_num || Head)
+   Data: data_ph_with_spaces_e2
+
+REML criterion at convergence: 386.8
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-1.07506 -0.07766 -0.00135  0.05415  0.99145 
+
+Random effects:
+ Groups   Name                        Variance  Std.Dev.
+ set      (Intercept)                 3.014e-03 0.054901
+ set.1    plurality_num               1.986e+00 1.409247
+ Head     (Intercept)                 8.276e+00 2.876819
+ Head.1   sibilance_num               6.626e+00 2.574031
+ Head.2   plurality_num               3.879e-08 0.000197
+ Head.3   sibilance_num:plurality_num 1.163e+01 3.409964
+ Residual                             3.082e-02 0.175559
+Number of obs: 88, groups:  set, 22; Head, 21
+
+Fixed effects:
+                                Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)                      14.0285     0.6282 20.0009  22.332  1.3e-15 ***
+sibilance1                       -0.6884     0.5630 20.0006  -1.223    0.236    
+sibilanceNonSibilant:plurality1   0.3097     0.4812 38.8879   0.644    0.524    
+sibilanceSibilant:plurality1      0.3644     0.4812 38.8879   0.757    0.453    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) sblnc1 sbNS:1
+sibilance1   0.000              
+sblncNnSb:1  0.000  0.000       
+sblncSbln:1  0.000  0.000 -0.208
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + sibilance * plurality + (1 | set) + (1 +      sibilance * plurality | Head)
+   Data: data_ph_with_spaces_e3
+
+REML criterion at convergence: 364.6
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-0.96557 -0.10939 -0.00768  0.10536  0.97606 
+
+Random effects:
+ Groups   Name                  Variance Std.Dev. Corr             
+ set      (Intercept)            0.6127  0.7828                    
+ Head     (Intercept)           11.1238  3.3352                    
+          sibilance1             3.5136  1.8745    0.50            
+          plurality1             2.6307  1.6219    0.27 -0.12      
+          sibilance1:plurality1  6.7920  2.6062   -0.28 -0.49  0.10
+ Residual                        0.0477  0.2184                    
+Number of obs: 88, groups:  set, 22; Head, 21
+
+Fixed effects:
+                      Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)            13.7213     0.7475 19.9798  18.357 5.62e-14 ***
+sibilance1              0.5110     0.4117 20.0021   1.241    0.229    
+plurality1              0.2667     0.3571 19.9962   0.747    0.464    
+sibilance1:plurality1  -0.3614     0.5765 19.9825  -0.627    0.538    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) sblnc1 plrlt1
+sibilance1   0.480              
+plurality1   0.258 -0.117       
+sblnc1:plr1 -0.267 -0.483  0.101
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + sibilance/plurality + (1 | set) + (1 + sibilance *      plurality | Head)
+   Data: data_ph_with_spaces_e3
+
+REML criterion at convergence: 364.6
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-0.96696 -0.10927 -0.00766  0.10525  0.97743 
+
+Random effects:
+ Groups   Name                  Variance Std.Dev. Corr             
+ set      (Intercept)            0.61185 0.7822                    
+ Head     (Intercept)           11.12798 3.3359                    
+          sibilance1             3.51483 1.8748    0.50            
+          plurality1             2.63136 1.6221    0.27 -0.12      
+          sibilance1:plurality1  6.79317 2.6064   -0.28 -0.49  0.10
+ Residual                        0.04757 0.2181                    
+Number of obs: 88, groups:  set, 22; Head, 21
+
+Fixed effects:
+                                Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)                     13.72130    0.74758 19.97151  18.354 5.68e-14 ***
+sibilance1                       0.51105    0.41181 19.99303   1.241    0.229    
+sibilanceNonSibilant:plurality1  0.44739    0.43564 19.98971   1.027    0.317    
+sibilanceSibilant:plurality1     0.08598    0.48105 19.98430   0.179    0.860    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) sblnc1 sbNS:1
+sibilance1   0.480              
+sblncNnSb:1  0.388  0.223       
+sblncSbln:1  0.031 -0.376  0.212
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + sibilance * plurality + (1 | set) + (1 +      sibilance_num || Head)
+   Data: data_text_with_spaces_e2
+
+REML criterion at convergence: 417.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.4544 -0.5770 -0.1411  0.6144  1.8026 
+
+Random effects:
+ Groups   Name          Variance Std.Dev.
+ set      (Intercept)    0.2489  0.4989  
+ Head     (Intercept)   11.6704  3.4162  
+ Head.1   sibilance_num  2.2861  1.5120  
+ Residual                3.2934  1.8148  
+Number of obs: 88, groups:  set, 22; Head, 21
+
+Fixed effects:
+                      Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)            15.6347     0.7782 19.9188  20.092 1.08e-14 ***
+sibilance1              0.3298     0.5104 19.2778   0.646 0.525839    
+plurality1              1.4666     0.3869 42.5876   3.791 0.000468 ***
+sibilance1:plurality1   0.4241     0.7738 42.5876   0.548 0.586544    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) sblnc1 plrlt1
+sibilance1  0.000               
+plurality1  0.000  0.000        
+sblnc1:plr1 0.000  0.000  0.000 
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + sibilance/plurality + (1 | set) + (1 + sibilance_num ||      Head)
+   Data: data_text_with_spaces_e2
+
+REML criterion at convergence: 417.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.4544 -0.5770 -0.1411  0.6144  1.8026 
+
+Random effects:
+ Groups   Name          Variance Std.Dev.
+ set      (Intercept)    0.2489  0.4989  
+ Head     (Intercept)   11.6704  3.4162  
+ Head.1   sibilance_num  2.2861  1.5120  
+ Residual                3.2934  1.8148  
+Number of obs: 88, groups:  set, 22; Head, 21
+
+Fixed effects:
+                                Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)                      15.6347     0.7782 19.9188  20.092 1.08e-14 ***
+sibilance1                        0.3298     0.5104 19.2778   0.646  0.52584    
+sibilanceNonSibilant:plurality1   1.2546     0.5472 42.5876   2.293  0.02686 *  
+sibilanceSibilant:plurality1      1.6786     0.5472 42.5876   3.068  0.00374 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) sblnc1 sbNS:1
+sibilance1  0.000               
+sblncNnSb:1 0.000  0.000        
+sblncSbln:1 0.000  0.000  0.000 
+
+
+# -----------------------------------------------------
+
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + sibilance * plurality + (1 + sibilance_num *      plurality_num || set) + (1 + plurality | Head)
+   Data: data_text_with_spaces_e3
+
+REML criterion at convergence: 413.9
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-0.73999 -0.24688 -0.05475  0.22149  1.14343 
+
+Random effects:
+ Groups   Name                        Variance  Std.Dev. Corr 
+ set      (Intercept)                 4.711e-01 0.686333      
+ set.1    sibilance_num               4.575e+00 2.139037      
+ set.2    plurality_num               1.745e-06 0.001321      
+ set.3    sibilance_num:plurality_num 1.528e+01 3.909042      
+ Head     (Intercept)                 1.099e+01 3.315302      
+          plurality1                  2.554e+00 1.598138 -0.51
+ Residual                             6.322e-01 0.795089      
+Number of obs: 88, groups:  set, 22; Head, 21
+
+Fixed effects:
+                      Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)            16.2854     0.7434 19.9648  21.907 1.96e-15 ***
+sibilance1             -0.5848     0.4865 20.9989  -1.202   0.2428    
+plurality1              0.8428     0.3885 19.8838   2.170   0.0423 *  
+sibilance1:plurality1  -0.6379     0.8997 21.0016  -0.709   0.4862    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) sblnc1 plrlt1
+sibilance1   0.000              
+plurality1  -0.448  0.000       
+sblnc1:plr1  0.000  0.000  0.000
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Surprisal.head ~ 1 + sibilance/plurality + (1 + sibilance_num *      plurality_num || set) + (1 + plurality | Head)
+   Data: data_text_with_spaces_e3
+
+REML criterion at convergence: 413.9
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-0.73996 -0.24688 -0.05474  0.22146  1.14337 
+
+Random effects:
+ Groups   Name                        Variance  Std.Dev. Corr 
+ set      (Intercept)                 4.713e-01 0.686491      
+ set.1    sibilance_num               4.575e+00 2.138984      
+ set.2    plurality_num               6.578e-07 0.000811      
+ set.3    sibilance_num:plurality_num 1.528e+01 3.909168      
+ Head     (Intercept)                 1.099e+01 3.315243      
+          plurality1                  2.554e+00 1.598118 -0.51
+ Residual                             6.321e-01 0.795067      
+Number of obs: 88, groups:  set, 22; Head, 21
+
+Fixed effects:
+                                Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)                      16.2854     0.7434 19.9653  21.908 1.96e-15 ***
+sibilance1                       -0.5848     0.4865 21.0004  -1.202   0.2428    
+sibilanceNonSibilant:plurality1   1.1617     0.5944 40.3192   1.954   0.0576 .  
+sibilanceSibilant:plurality1      0.5239     0.5944 40.3192   0.881   0.3833    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) sblnc1 sbNS:1
+sibilance1   0.000              
+sblncNnSb:1 -0.293  0.000       
+sblncSbln:1 -0.293  0.000 -0.146
