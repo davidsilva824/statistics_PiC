@@ -5,10 +5,20 @@ library(dplyr)
 setwd("C:/Users/Admin/Desktop/Dissertação/código/satistics_PiC/Statistics_PiC/results_experiment_3")
 
 # Get list of all CSV files in the folder
-file_list <- list.files(pattern = "\\.csv$")
+#file_list <- list.files(pattern = "\\.csv$")
 
 # currently it is reading all the files in the folder. But alternatively you can add a list of files:
-#file_list <- c("results_experiment_3_babyLlama_10M.csv", ...)
+file_list <- c("results_experiment_3_babble.csv", 
+              "results_experiment_3_babyLlama_10M.csv", 
+              "results_experiment_3_babyLlama_100M.csv", 
+              "results_experiment_3_gpt_2_10M.csv", 
+              "results_experiment_3_gpt_2_100M.csv", 
+              "results_experiment_3_gpt_neo_1_3B.csv", 
+              "results_experiment_3_gpt_neo_2_7B.csv", 
+              "results_experiment_3_gpt_neo_125M.csv", 
+              "results_experiment_3_gpt_wee_large.csv", 
+              "results_experiment_3_gpt_wee_medium.csv",
+              "results_experiment_3_gpt_wee_small.csv")
 
 #-------------------------------------------------------------------------------------------------
 

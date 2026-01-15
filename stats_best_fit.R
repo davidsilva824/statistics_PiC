@@ -44,7 +44,7 @@ process_data <- function(filename) {
   return(dat)
 }
 
-sink("stats_results_experiment_3.txt")
+sink("stats_results_experiment_1.txt")
 
 # -----------------------------------------------------
 
