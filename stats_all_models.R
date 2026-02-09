@@ -7,8 +7,8 @@ setwd("C:/Users/Admin/Desktop/Dissertação/código/satistics_PiC/Statistics_PiC
 # Get list of all CSV files in the folder
 #file_list <- list.files(pattern = "\\.csv$")
 
-# currently it is reading all the files in the folder. But alternatively you can add a list of files:
-file_list <- c("results_experiment_1_phonemetransformers__GPT2-85M-CHAR-TXT-SPACELESS.csv" 
+# Alternatively you can add a list of a few files in the folder:
+file_list <- c("results_experiment_1_bbunzeck__grapheme-llama.csv" 
               )
 
 #-------------------------------------------------------------------------------------------------
@@ -46,7 +46,7 @@ fit_model <- function(fml, current_dat){
   out
 }
 
-# helper: build formulas from random-effects strings
+# build formulas from random-effects strings
 build_formulas <- function(re_strings){
   sapply(
     re_strings,
@@ -54,7 +54,7 @@ build_formulas <- function(re_strings){
   ) |> unname()
 }
 
-# helper: fit a list and return a clean 1-row-per-model data.frame
+# fit a list and return a clean 1-row-per-model data.frame
 fit_formula_list <- function(formulas, current_dat){
   rows <- vector("list", length(formulas))
   for(i in seq_along(formulas)){
@@ -216,7 +216,7 @@ print(final_table, right = FALSE, row.names = FALSE)
 
 
 final_model <- lmer(
-  Surprisal.head ~ 1 + regularity * plurality +  (1 + regularity + plurality | set) + (1 + plurality_num || Head), 
+  Surprisal.head ~ 1 + regularity / plurality +  (1 + regularity_num || set) + (1 + plurality | Head), 
   data = dat, 
   REML = TRUE
 )
