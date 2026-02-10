@@ -2,20 +2,23 @@ library(lme4)
 library(lmerTest)
 library(dplyr)
 
+# this folder contains the results files obtained from study_pic_4: https://github.com/davidsilva824/study_pic_4 
 setwd("C:/Users/Admin/Desktop/Dissertação/código/satistics_PiC/Statistics_PiC/results_experiment_1")
 
-# Get list of all CSV files in the folder
+# To read all files in a folder:
 #file_list <- list.files(pattern = "\\.csv$")
 
-# Alternatively you can add a list of a few files in the folder:
-file_list <- c("results_experiment_1_bbunzeck__grapheme-llama.csv" 
+# To read one or more specific files in the folder:
+file_list <- c("results_experiment_1_bbunzeck__grapheme-llama.csv",
+               "results_experiment_1_babylm__opt-125m-strict-2023.csv",
+               "results_experiment_1_gpt_2_100M.csv"
               )
 
 #-------------------------------------------------------------------------------------------------
 
-### SETUP: FUNCTIONS
+### ### FUNCTIONS
 
-### Convergence and singularity check. 
+# a function to check if a model converges 
 hasConverged <- function (mm) {
   if (is.null(unlist(mm@optinfo$conv$lme4))) {
     return(1)   # converged
@@ -25,18 +28,21 @@ hasConverged <- function (mm) {
   }
 }
 
-### Fitting each model and obtaining the respective AIC. 
+
+
+# Function to fit the fit mixed models.
+# here I need to use tryCatch to prevent the script from crashing if an error happens, in order to try all the models to completion. 
+# tryCatch tries the code in the first block. If that code works, it returns its result.
+# If it throws an error, it jumps to error = function(e) where it is defined what to return: AIC = NA, convergence = -99, and the error message.
 fit_model <- function(fml, current_dat){
   out <- tryCatch({
     m <- lmer(fml, current_dat, REML = TRUE)
-    # We MUST return a list because the rest of your code looks for '$AIC' and '$convergence'
     list(
       AIC = as.numeric(AIC(m)),
       convergence = hasConverged(m),
       error = NA_character_
     )
   }, error = function(e){
-    # If it crashes, we need to return this structure so the loop doesn't die
     list(
       AIC = NA_real_,
       convergence = -99,
@@ -46,15 +52,16 @@ fit_model <- function(fml, current_dat){
   out
 }
 
-# build formulas from random-effects strings
-build_formulas <- function(re_strings){
-  sapply(
+# function to add "Surprisal.head ~ 1 + regularity * plurality + " to all the possible combinations in the formula
+# |> passes the previous result to the next function. 
+# sapply() often gives the result names taken from the input vector. unname() removes them, returning just the formulas.build_formulas <- function(re_strings){
+sapply(
     re_strings,
     \(x) as.formula(paste0("Surprisal.head ~ 1 + regularity * plurality + ", x))
   ) |> unname()
 }
 
-# fit a list and return a clean 1-row-per-model data.frame
+# This function fits all the formulas and returns a results table.
 fit_formula_list <- function(formulas, current_dat){
   rows <- vector("list", length(formulas))
   for(i in seq_along(formulas)){
@@ -76,7 +83,7 @@ fit_formula_list <- function(formulas, current_dat){
 
 # -----------------------------------------------------------------------------------------------------------
 
-### MODEL SELECTION LOGIC
+### Building the random-effects terms.
 
 # Define Random Slopes (factor-coded, correlated)
 rs <- c("",
@@ -116,7 +123,7 @@ for (current_file in file_list) {
   
 # -----------------------------------------------------------------------------------------------------------
   
-### DATA PREPARATION
+### Data preparation
 
   dat <- dat %>% 
     mutate(
@@ -157,7 +164,7 @@ for (current_file in file_list) {
   
 # -----------------------------------------------------------------------------------------------------------
   
-### MODEL FITTING
+### Generating and fitting all the combinations for the results of all the models. 
 
   # GROUP 1: CORRELATED set (|) + CORRELATED Head (|)
   re_g1 <- apply(expand.grid(rs_set, rs_head), 1, \(x) paste(x, collapse = " + "))
@@ -201,7 +208,7 @@ for (current_file in file_list) {
 
 # -----------------------------------------------------------------------------------------------------------
 
-### FINAL OUTPUT
+### Final Output
 
 cat("\n--- PROCESSING COMPLETE ---\n\n")
 
@@ -214,6 +221,9 @@ final_table <- final_table[, c("File", "formula", "AIC")]
 
 print(final_table, right = FALSE, row.names = FALSE)
 
+# -----------------------------------------------------------------------------------------------------------
+
+### Code to test the winner. Must copy paste manually.
 
 final_model <- lmer(
   Surprisal.head ~ 1 + regularity / plurality +  (1 + regularity_num || set) + (1 + plurality | Head), 

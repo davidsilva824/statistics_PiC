@@ -23,6 +23,8 @@ file_list <- c(
   "results_experiment_1_phonemetransformers__GPT2-85M-BPE-TXT.csv"
 )
 
+# -------------------------------------------------------------------------------------------
+
 ### FUNCTIONS
 
 # a function to check if a model converges 
@@ -60,14 +62,14 @@ fit_model <- function(fml, current_dat){
 }
 
 # function to add "Surprisal.head ~ 1 + regularity * plurality + " to all the possible combinations in the formula
+# |> passes the previous result to the next function. 
+# sapply() often gives the result names taken from the input vector. unname() removes them, returning just the formulas.
+
 build_formulas <- function(re_strings){ # Creates a function called build_formulas
   sapply( # sapply() applies a function to each element of a vector/list
     re_strings,
     \(x) as.formula(paste0("Surprisal.head ~ 1 + regularity * plurality + ", x)) # \(x) is the way to write an anonimous function in R.Similar to lambda in python.
-    # paste0 concatenates two strings.
-    # as.formula(...) converts that string into an R formula object (the thing lmer() expects).
-  ) |> unname() # |> passes the previous result to the next function. 
-                # sapply() often gives the result names taken from the input vector. unname() removes them, returning just the formulas.
+  ) |> unname() 
 }
 
 # This function fits all the formulas and returns a results table.
@@ -97,7 +99,7 @@ get_model_name <- function(fn){
 
 # ------------------------------------------------------------
 
-### Loading and stacking the information in the results files.
+### Loading and stacking the information in the results files into a dataframe.
 
 # Creating the dataframe with all the variables. 
 cat("Found", length(file_list), "files to process.\n\n")
@@ -116,7 +118,7 @@ if(length(missing) > 0) stop(paste("Missing columns:", paste(missing, collapse="
 
 # ------------------------------------------------------------
 
-### Data preparation
+### Data preparation.
 dat_all <- dat_all %>%
   mutate(
     regularity = ifelse(grepl("Irregular", Category), "Irregular", "Regular"),
@@ -158,7 +160,7 @@ dat_all <- dat_all %>% filter(!is.na(set))
 
 # ------------------------------------------------------------
 
-# Building lots of random-effects terms.
+# Building the random-effects terms.
 
 # Slope menu (factor-coded, correlated)
 rs <- c("",
@@ -220,7 +222,7 @@ print(winner[, c("formula","AIC")], row.names = FALSE)
 
 # ------------------------------------------------------------
 
-### Code to test the winner. Must add it manually. 
+### Code to test the winner. Must copy paste manually.
 
 final_model <- lmer(
   Surprisal.head ~ 1 + regularity / plurality +  (1 | model) + (1 + regularity_num + plurality_num || set) + (1 + plurality_num || Head), 
