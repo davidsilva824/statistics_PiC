@@ -3,12 +3,15 @@ library(lmerTest)
 library(dplyr)
 library(stringr)
 
+# this folder contains the results files obtained from study_pic_4: https://github.com/davidsilva824/study_pic_4 
 setwd("C:/Users/Admin/Desktop/Dissertação/código/satistics_PiC/Statistics_PiC/results_experiment_1")
 
-# ------------------------------------------------------------
-# FILES: either list all, or specify a subset
+
+# To read all files in a folder:
 # file_list <- list.files(pattern="\\.csv$", full.names = FALSE)
 
+
+# To read one or more specific files in the folder:
 file_list <- c(
   "results_experiment_1_babyLlama_100M.csv",
   "results_experiment_1_babylm__opt-125m-strict-2023.csv",
@@ -20,17 +23,23 @@ file_list <- c(
   "results_experiment_1_phonemetransformers__GPT2-85M-BPE-TXT.csv"
 )
 
-# ------------------------------------------------------------
-# FUNCTIONS
+### FUNCTIONS
 
+# a function to check if a model converges 
 hasConverged <- function(mm) {
-  if (is.null(unlist(mm@optinfo$conv$lme4))) {
+  if (is.null(unlist(mm@optinfo$conv$lme4))) { # returns 1 if mm@optinfo$conv$lme4 is NULL, meaning no convergence messages/warnings.
     return(1)
   } else {
-    if (isSingular(mm)) return(0)
-    return(-1)
+    if (isSingular(mm)) return(0) #returns 0 if the fit is singular.
+    return(-1) # returns -1 for other convergence problems.
   }
 }
+
+
+# Function to fit the fit mixed models.
+# here I need to use tryCatch to prevent the script from crashing if an error happens, in order to try all the models to completion. 
+# tryCatch tries the code in the first block. If that code works, it returns its result.
+# If it throws an error, it jumps to error = function(e) where it is defined what to return: AIC = NA, convergence = -99, and the error message.
 
 fit_model <- function(fml, current_dat){
   out <- tryCatch({
@@ -50,15 +59,20 @@ fit_model <- function(fml, current_dat){
   out
 }
 
-build_formulas <- function(re_strings){
-  sapply(
+# function to add "Surprisal.head ~ 1 + regularity * plurality + " to all the possible combinations in the formula
+build_formulas <- function(re_strings){ # Creates a function called build_formulas
+  sapply( # sapply() applies a function to each element of a vector/list
     re_strings,
-    \(x) as.formula(paste0("Surprisal.head ~ 1 + regularity * plurality + ", x))
-  ) |> unname()
+    \(x) as.formula(paste0("Surprisal.head ~ 1 + regularity * plurality + ", x)) # \(x) is the way to write an anonimous function in R.Similar to lambda in python.
+    # paste0 concatenates two strings.
+    # as.formula(...) converts that string into an R formula object (the thing lmer() expects).
+  ) |> unname() # |> passes the previous result to the next function. 
+                # sapply() often gives the result names taken from the input vector. unname() removes them, returning just the formulas.
 }
 
+# This function fits all the formulas and returns a results table.
 fit_formula_list <- function(formulas, current_dat){
-  rows <- vector("list", length(formulas))
+  rows <- vector("list", length(formulas)) # 
   for(i in seq_along(formulas)){
     res <- fit_model(formulas[[i]], current_dat)
     clean_formula <- paste(deparse(formulas[[i]], width.cutoff = 500), collapse = " ")
@@ -73,7 +87,7 @@ fit_formula_list <- function(formulas, current_dat){
   do.call(rbind, rows)
 }
 
-# filename -> model label
+# function to convert the file name into the model name. 
 get_model_name <- function(fn){
   x <- fn
   x <- str_replace(x, "\\.csv$", "")
@@ -82,8 +96,10 @@ get_model_name <- function(fn){
 }
 
 # ------------------------------------------------------------
-# LOAD + STACK
 
+### Loading and stacking the information in the results files.
+
+# Creating the dataframe with all the variables. 
 cat("Found", length(file_list), "files to process.\n\n")
 
 dat_all <- lapply(file_list, function(f){
@@ -93,14 +109,14 @@ dat_all <- lapply(file_list, function(f){
   d
 }) |> bind_rows()
 
-# quick sanity check
+# sanity check: to check if the dat_all has all the colmuns needed for models to run. 
 needed <- c("Surprisal.head","Category","Non.Head","Head","model")
 missing <- setdiff(needed, names(dat_all))
 if(length(missing) > 0) stop(paste("Missing columns:", paste(missing, collapse=", ")))
 
 # ------------------------------------------------------------
-# DATA PREP
 
+### Data preparation
 dat_all <- dat_all %>%
   mutate(
     regularity = ifelse(grepl("Irregular", Category), "Irregular", "Regular"),
@@ -137,11 +153,12 @@ dat_all <- dat_all %>%
     )
   )
 
-# If any NA sets exist, drop them (or handle differently if you prefer)
+# If any NA sets exist, drop them.
 dat_all <- dat_all %>% filter(!is.na(set))
 
 # ------------------------------------------------------------
-# MODEL SELECTION GRID 
+
+# Building lots of random-effects terms.
 
 # Slope menu (factor-coded, correlated)
 rs <- c("",
@@ -164,7 +181,9 @@ rs_model_uncorr <- c("(1 | model)", sapply(rs_num, \(x) paste0("(1", x, " || mod
 rs_set_uncorr   <- c("(1 | set)",   sapply(rs_num, \(x) paste0("(1", x, " || set)"))   |> unname())
 rs_head_uncorr  <- c("(1 | Head)",  sapply(rs_num, \(x) paste0("(1", x, " || Head)"))  |> unname())
 
-# ---- GROUPS (kept simple: 4 groups like before, but with model added)
+# ------------------------------------------------------------
+
+### Generating and fitting all the combinations for the results of all the models. 
 
 # G1: all correlated
 re_g1 <- apply(expand.grid(rs_model, rs_set, rs_head), 1, \(x) paste(x, collapse=" + "))
@@ -199,6 +218,9 @@ winner <- winner[which.min(winner$AIC), ]
 cat("\n--- GLOBAL MODEL SELECTION COMPLETE ---\n\n")
 print(winner[, c("formula","AIC")], row.names = FALSE)
 
+# ------------------------------------------------------------
+
+### Code to test the winner. Must add it manually. 
 
 final_model <- lmer(
   Surprisal.head ~ 1 + regularity / plurality +  (1 | model) + (1 + regularity_num + plurality_num || set) + (1 + plurality_num || Head), 
