@@ -1,79 +1,83 @@
 Global model results (Plural ref vs Singular ref)
-Generated: 2026-02-28 00:35:16 
+Generated: 2026-02-28 14:39:52 
 
 
 --- PLURAL reference ---
 Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
-Formula: Surprisal.head ~ 1 + regularity * plurality + (1 | model) + (1 +      plurality | set) + (1 + plurality | Head)
+Formula: Surprisal.head ~ 1 + regularity * plurality + (1 + plurality |      model) + (1 + regularity + plurality | set) + (1 + plurality |      Head)
    Data: dat_plur
 
-REML criterion at convergence: 5452.7
+REML criterion at convergence: 8672.1
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--3.1233 -0.6011  0.0070  0.6019  5.7751 
+-3.8665 -0.5878 -0.0008  0.5774  6.5166 
 
 Random effects:
- Groups   Name              Variance Std.Dev. Corr 
- Head     (Intercept)       3.3964   1.8429        
-          pluralitySingular 1.0460   1.0227   -0.71
- set      (Intercept)       0.1886   0.4343        
-          pluralitySingular 0.2235   0.4727   -0.09
- model    (Intercept)       0.2688   0.5185        
- Residual                   3.0526   1.7472        
-Number of obs: 1344, groups:  Head, 14; set, 14; model, 6
+ Groups   Name                Variance Std.Dev. Corr       
+ Head     (Intercept)         3.43972  1.8546              
+          pluralitySingular   0.97113  0.9855   -0.73      
+ set      (Intercept)         0.36973  0.6081              
+          regularityIrregular 0.21777  0.4667   -0.65      
+          pluralitySingular   0.19838  0.4454   -0.19  0.07
+ model    (Intercept)         0.24607  0.4961              
+          pluralitySingular   0.04721  0.2173   -0.78      
+ Residual                     2.56736  1.6023              
+Number of obs: 2240, groups:  Head, 14; set, 14; model, 10
 
 Fixed effects:
                                        Estimate Std. Error        df t value Pr(>|t|)    
-(Intercept)                             14.4669     0.5567   18.3326  25.985  6.4e-16 ***
-regularityIrregular                     -0.3783     0.1348 1281.1491  -2.806  0.00509 ** 
-pluralitySingular                       -1.1508     0.3299   18.6884  -3.488  0.00251 ** 
-regularityIrregular:pluralitySingular    0.6780     0.1906 1281.1491   3.556  0.00039 ***
+(Intercept)                             14.4120     0.5489   18.4522  26.256 4.52e-16 ***
+regularityIrregular                     -0.2631     0.1572   19.5861  -1.673  0.11023    
+pluralitySingular                       -1.2428     0.3121   19.9142  -3.982  0.00074 ***
+regularityIrregular:pluralitySingular    0.7167     0.1354 2152.1321   5.293 1.33e-07 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Correlation of Fixed Effects:
             (Intr) rglrtI plrltS
-rglrtyIrrgl -0.121              
-plrltySnglr -0.580  0.204       
-rglrtyIrr:S  0.086 -0.707 -0.289
+rglrtyIrrgl -0.205              
+plrltySnglr -0.653  0.115       
+rglrtyIrr:S  0.062 -0.431 -0.217
 isSingular: FALSE 
 
 
 --- SINGULAR reference ---
 Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
-Formula: Surprisal.head ~ 1 + regularity * plurality + (1 | model) + (1 +      plurality | set) + (1 + plurality | Head)
+Formula: Surprisal.head ~ 1 + regularity * plurality + (1 + plurality |      model) + (1 + regularity + plurality | set) + (1 + plurality |      Head)
    Data: dat_sing
 
-REML criterion at convergence: 5452.7
+REML criterion at convergence: 8672.1
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--3.1233 -0.6010  0.0070  0.6019  5.7751 
+-3.8665 -0.5878 -0.0008  0.5774  6.5166 
 
 Random effects:
- Groups   Name            Variance Std.Dev. Corr 
- Head     (Intercept)     1.7514   1.3234        
-          pluralityPlural 1.0459   1.0227   0.22 
- set      (Intercept)     0.3750   0.6124        
-          pluralityPlural 0.2235   0.4728   -0.71
- model    (Intercept)     0.2688   0.5184        
- Residual                 3.0526   1.7472        
-Number of obs: 1344, groups:  Head, 14; set, 14; model, 6
+ Groups   Name                Variance Std.Dev. Corr       
+ Head     (Intercept)         1.74765  1.3220              
+          pluralityPlural     0.97099  0.9854   0.28       
+ set      (Intercept)         0.46245  0.6800              
+          regularityIrregular 0.21774  0.4666   -0.53      
+          pluralityPlural     0.19841  0.4454   -0.48 -0.07
+ model    (Intercept)         0.12476  0.3532              
+          pluralityPlural     0.04722  0.2173   0.48       
+ Residual                     2.56736  1.6023              
+Number of obs: 2240, groups:  Head, 14; set, 14; model, 10
 
 Fixed effects:
                                      Estimate Std. Error        df t value Pr(>|t|)    
-(Intercept)                           13.3161     0.4536   23.2250  29.355  < 2e-16 ***
-regularityIrregular                    0.2997     0.1348 1281.1507   2.223  0.02636 *  
-pluralityPlural                        1.1508     0.3299   18.6920   3.488  0.00251 ** 
-regularityIrregular:pluralityPlural   -0.6780     0.1906 1281.1507  -3.556  0.00039 ***
+(Intercept)                           13.1692     0.4182   22.2102  31.487  < 2e-16 ***
+regularityIrregular                    0.4537     0.1572   19.5899   2.885 0.009281 ** 
+pluralityPlural                        1.2428     0.3121   19.9193   3.982 0.000739 ***
+regularityIrregular:pluralityPlural   -0.7167     0.1354 2152.1310  -5.293 1.33e-07 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Correlation of Fixed Effects:
             (Intr) rglrtI plrltP
-rglrtyIrrgl -0.149              
-plurltyPlrl -0.016  0.204       
-rglrtyIrr:P  0.105 -0.707 -0.289
+rglrtyIrrgl -0.253              
+plurltyPlrl  0.111  0.072       
+rglrtyIrr:P  0.081 -0.431 -0.217
 isSingular: FALSE 
 
