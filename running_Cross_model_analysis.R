@@ -11,11 +11,7 @@ file_list <- c(
   "results_experiment_1_BabyLM-community__babylm-baseline-100m-gpt-bert-causal-focus.csv",
   "results_experiment_1_colinglab__CLASS_IT-140M.csv",
   "results_experiment_1_gpt_2_100M.csv",
-  "results_experiment_1_phonemetransformers__GPT2-85M-BPE-TXT.csv",
-  "results_experiment_1_bbunzeck__grapheme-llama.csv",
-  "results_experiment_1_BabyLM-community__babylm-baseline-100m-gpt-bert-masked-focus.csv",
-  "results_experiment_1_BabyLM-community__babylm-baseline-100m-gpt-bert-mixed.csv",
-  "results_experiment_1_phonemetransformers__GPT2-85M-CHAR-TXT.csv"
+  "results_experiment_1_phonemetransformers__GPT2-85M-BPE-TXT.csv"
 )
 
 get_model_name <- function(fn){
@@ -69,11 +65,15 @@ cat("Global model results (Plural ref vs Singular ref)\n")
 cat("Generated:", format(Sys.time()), "\n\n")
 
 # --- PLURAL reference ---
-dat_plur <- dat_all %>% mutate(plurality = factor(plurality, levels = c("Plural","Singular")))
+dat_plur <- dat_all %>%
+  mutate(
+    plurality = factor(plurality, levels = c("Plural","Singular")),
+    plurality_num = ifelse(plurality == "Plural", 0, 1)  # 0 = reference (Plural)
+  )
 
 final_model_plurref <- lmer(
   Surprisal.head ~ 1 + regularity * plurality +
-    (1 + plurality | model) + (1 + regularity + plurality | set) + (1 + plurality | Head),
+    (1 | model) + (1 + plurality | set) + (1 + plurality | Head),
   data = dat_plur,
   REML = TRUE
 )
@@ -83,11 +83,15 @@ print(summary(final_model_plurref))
 cat("isSingular:", isSingular(final_model_plurref), "\n\n")
 
 # --- SINGULAR reference ---
-dat_sing <- dat_all %>% mutate(plurality = factor(plurality, levels = c("Singular","Plural")))
+dat_sing <- dat_all %>%
+  mutate(
+    plurality = factor(plurality, levels = c("Singular","Plural")),
+    plurality_num = ifelse(plurality == "Singular", 0, 1)  # 0 = reference (Singular)
+  )
 
 final_model_singref <- lmer(
   Surprisal.head ~ 1 + regularity * plurality +
-    (1 + plurality | model) + (1 + regularity + plurality | set) + (1 + plurality | Head),
+    (1 | model) + (1 + plurality | set) + (1 + plurality | Head),
   data = dat_sing,
   REML = TRUE
 )

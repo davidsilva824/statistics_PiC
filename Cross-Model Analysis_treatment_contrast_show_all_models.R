@@ -13,9 +13,7 @@ file_list <- c(
   "results_experiment_1_BabyLM-community__babylm-baseline-100m-gpt-bert-causal-focus.csv",
   "results_experiment_1_colinglab__CLASS_IT-140M.csv",
   "results_experiment_1_gpt_2_100M.csv",
-  "results_experiment_1_phonemetransformers__GPT2-85M-BPE-TXT.csv",
-  "results_experiment_1_bbunzeck__grapheme-llama.csv",
-  "results_experiment_1_phonemetransformers__GPT2-85M-CHAR-TXT.csv"
+  "results_experiment_1_phonemetransformers__GPT2-85M-BPE-TXT.csv"
 )
 
 # -------------------------------------------------------------------------------------------
@@ -203,15 +201,4 @@ if(nrow(winner) == 0) stop("No models converged in the global fit.")
 winner <- winner[which.min(winner$AIC), ]
 
 cat("\n--- GLOBAL MODEL SELECTION COMPLETE ---\n\n")
-print(winner[, c("AIC","convergence","formula","family","error")], row.names = FALSE)
-
-# -------------------------------------------------------------------------------------------
-### Test the winner (manual)
-final_model <- lmer(
-  Surprisal.head ~ 1 + regularity / plurality +
-    (1 | model) + (1 + regularity_num + plurality_num || set) + (1 + plurality_num || Head),
-  data = dat_all,
-  REML = TRUE
-)
-
-summary(final_model)
+print(winner[, c("AIC","convergence","formula","family")], row.names = FALSE)
