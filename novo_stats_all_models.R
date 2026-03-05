@@ -3,13 +3,16 @@ library(lmerTest)
 library(dplyr)
 
 # this folder contains the results files obtained from study_pic_4: https://github.com/davidsilva824/study_pic_4 
-setwd("C:/Users/Admin/Desktop/Dissertação/código/satistics_PiC/Statistics_PiC/results_experiment_1")
+setwd("C:/Users/Admin/Desktop/Dissertação/código/satistics_PiC/Statistics_PiC/results_experiment_1_10M")
 
 # To read all files in a folder:
 #file_list <- list.files(pattern = "\\.csv$")
 
 # To read one or more specific files in the folder:
-file_list <- c("results_experiment_1_babyLlama_100M.csv"
+file_list <- c(
+  "results_experiment_1_gpt_bert_10M_causal.csv",
+  "results_experiment_1_gpt_bert_10M_masked.csv",
+  "results_experiment_1_gpt_bert_10M_mixed.csv"
 )
 
 

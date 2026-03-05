@@ -9,17 +9,7 @@ setwd("C:/Users/Admin/Desktop/Dissertação/código/satistics_PiC/Statistics_PiC
 #file_list <- list.files(pattern = "\\.csv$")
 
 # To read one or more specific files in the folder:
-file_list <- c("results_experiment_1_bbunzeck__grapheme-llama.csv",
-               "results_experiment_1_babylm__opt-125m-strict-2023.csv",
-               "results_experiment_1_gpt_2_100M.csv",
-               "results_experiment_1_BabyLM-community__babylm-baseline-100m-gpt-bert-causal-focus",
-               "results_experiment_1_BabyLM-community__babylm-baseline-100m-gpt-bert-masked-focus",
-               "results_experiment_1_BabyLM-community__babylm-baseline-100m-gpt-bert-mixed",
-               "results_experiment_1_colinglab__CLASS_IT-140M",
-               "results_experiment_1_phonemetransformers__GPT2-85M-BPE-TXT",
-               "results_experiment_1_phonemetransformers__GPT2-85M-BPE-TXT-SPACELESS",
-               "results_experiment_1_phonemetransformers__GPT2-85M-CHAR-TXT",
-               "results_experiment_1_phonemetransformers__GPT2-85M-CHAR-TXT-SPACELESS"
+file_list <- c("results_experiment_1_babble_txt_BPE_with_spaces.csv"
                )
 
 #-------------------------------------------------------------------------------------------------
@@ -67,7 +57,7 @@ sapply(
     re_strings,
     \(x) as.formula(paste0("Surprisal.head ~ 1 + regularity * plurality + ", x))
   ) |> unname()
-}
+
 
 # This function fits all the formulas and returns a results table.
 fit_formula_list <- function(formulas, current_dat){

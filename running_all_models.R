@@ -2,64 +2,53 @@ library(lme4)
 library(lmerTest)
 library(dplyr)
 
-setwd("C:/Users/Admin/Desktop/Dissertação/código/satistics_PiC/Statistics_PiC/results_experiment_1")
+options(scipen = 9999)
+options(digits = 3)
 
-# ---- paste your final choices here (File + full formula) ----
+setwd("C:/Users/Admin/Desktop/Dissertação/código/satistics_PiC/Statistics_PiC/results_experiment_1_10M")
+
 models <- data.frame(
   File = c(
-    "results_experiment_1_babyLlama_100M.csv",
-    "results_experiment_1_bbunzeck__grapheme-llama.csv",
-    "results_experiment_1_babylm__opt-125m-strict-2023.csv",
-    "results_experiment_1_gpt_2_100M.csv",
-    "results_experiment_1_BabyLM-community__babylm-baseline-100m-gpt-bert-causal-focus.csv",
-    "results_experiment_1_BabyLM-community__babylm-baseline-100m-gpt-bert-masked-focus.csv",
-    "results_experiment_1_BabyLM-community__babylm-baseline-100m-gpt-bert-mixed.csv",
-    "results_experiment_1_colinglab__CLASS_IT-140M.csv",
-    "results_experiment_1_phonemetransformers__GPT2-85M-BPE-TXT.csv",
-    "results_experiment_1_phonemetransformers__GPT2-85M-CHAR-TXT.csv",
-    "results_experiment_1_phonemetransformers__GPT2-85M-CHAR-TXT-SPACELESS.csv"
+    "results_experiment_1_babyLlama_2_10M.csv",
+    "results_experiment_1_babyLlama_10M.csv",
+    "results_experiment_1_gpt_2_10M.csv",
+    "results_experiment_1_gpt_bert_10M_causal.csv",
+    "results_experiment_1_gpt_bert_10M_masked.csv",
+    "results_experiment_1_gpt_bert_10M_mixed.csv",
+    "results_experiment_1_gpt_wee_large.csv",
+    "results_experiment_1_gpt_wee_medium.csv",
+    "results_experiment_1_gpt_wee_small.csv",
+    "results_experiment_1_MOEP.csv",
+    "results_experiment_1_OPT_10M.csv",
+    "results_experiment_1_ZLATA.csv"
   ),
+  
   formula = c(
-    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num ||      set) + (1 + plurality | Head)",
-    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num || set) + (1 + plurality | Head)",
-    "Surprisal.head ~ 1 + regularity * plurality + (1 + plurality_num || set) + (1 + plurality | Head)",
-    "Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 + plurality | Head)",
-    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality | Head)",
-    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity + plurality | set) + (1 + plurality | Head)",
-    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality_num || Head)",
-    "Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 + regularity | Head)",
-    "Surprisal.head ~ 1 + regularity * plurality + (1 + plurality_num || set) + (1 + plurality_num || Head)",
-    "Surprisal.head ~ 1 + regularity * plurality + (1 + plurality_num || set) + (1 + regularity + plurality | Head)",
-    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head)"
+    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num || set) + (1 + plurality_num || Head)",                 # babyLlama_2_10M
+    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num || set) + (1 + plurality_num || Head)",                 # babyLlama_10M
+    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity * plurality | set) + (1 + plurality_num || Head)",          # gpt_2_10M
+    "Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 + plurality | Head)",                                        # gpt_bert_10M_causal
+    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num || set) + (1 + plurality | Head)",                      # gpt_bert_10M_masked
+    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num || set) + (1 + plurality | Head)",                      # gpt_bert_10M_mixed
+    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality | Head)",                           # gpt_wee_large
+    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num + plurality_num || set) + (1 + plurality_num || Head)", # gpt_wee_medium
+    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + regularity_num + plurality_num || Head)",     # gpt_wee_small
+    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num || set) + (1 | Head)",                                  # MOEP
+    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity * plurality | set) + (1 + plurality_num || Head)",          # OPT_10M
+    "Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality | Head)"                            # ZLATA
   ),
+  
   stringsAsFactors = FALSE
 )
 
-hasConverged <- function (mm) {
+hasConverged <- function(mm) {
   if (is.null(unlist(mm@optinfo$conv$lme4))) return(1)
   if (isSingular(mm)) return(0)
   return(-1)
 }
 
-prep_data_treatment <- function(dat, plurality_ref = c("Plural","Singular")){
-  plurality_ref <- match.arg(plurality_ref)
-
-  dat <- dat %>%
-    mutate(
-      regularity = ifelse(grepl("Irregular", Category), "Irregular", "Regular"),
-      plurality  = ifelse(grepl("Plural", Category), "Plural", "Singular"),
-      regularity = factor(regularity, levels = c("Regular","Irregular")),
-      plurality  = if (plurality_ref == "Plural")
-        factor(plurality, levels = c("Plural","Singular"))
-      else
-        factor(plurality, levels = c("Singular","Plural"))
-    )
-
-  # numeric coding consistent with the chosen reference (0 = ref, 1 = other)
-  dat$regularity_num <- ifelse(dat$regularity == levels(dat$regularity)[1], 0, 1)
-  dat$plurality_num  <- ifelse(dat$plurality  == levels(dat$plurality)[1], 0, 1)
-
-  dat <- dat %>%
+add_set <- function(dat){
+  dat %>%
     mutate(
       set = case_when(
         Non.Head %in% c("goose","geese","swan","swans") ~ "set_goose_swan",
@@ -79,19 +68,52 @@ prep_data_treatment <- function(dat, plurality_ref = c("Plural","Singular")){
         TRUE ~ NA_character_
       )
     )
-
-  dat
 }
 
-run_one <- function(file, fml_string, plurality_ref){
-  dat <- read.csv(file, check.names = TRUE)
-  dat <- prep_data_treatment(dat, plurality_ref = plurality_ref)
+# CASE 1: Plural + Regular references
+prep_PR <- function(dat){
+  dat <- dat %>%
+    mutate(
+      regularity = ifelse(grepl("Irregular", Category), "Irregular", "Regular"),
+      plurality  = ifelse(grepl("Plural", Category), "Plural", "Singular"),
+      regularity = factor(regularity, levels = c("Regular","Irregular")),
+      plurality  = factor(plurality,  levels = c("Plural","Singular"))
+    )
+  dat$regularity_num <- ifelse(dat$regularity == "Regular", 0, 1)
+  dat$plurality_num  <- ifelse(dat$plurality  == "Plural", 0, 1)
+  add_set(dat)
+}
 
-  m <- tryCatch(lmer(as.formula(fml_string), dat, REML = TRUE), error = function(e) e)
-  if(inherits(m, "error")){
-    return(list(ok=FALSE, error=conditionMessage(m)))
-  }
+# CASE 2: Singular + Irregular references
+prep_SI <- function(dat){
+  dat <- dat %>%
+    mutate(
+      regularity = ifelse(grepl("Irregular", Category), "Irregular", "Regular"),
+      plurality  = ifelse(grepl("Plural", Category), "Plural", "Singular"),
+      regularity = factor(regularity, levels = c("Irregular","Regular")),
+      plurality  = factor(plurality,  levels = c("Singular","Plural"))
+    )
+  dat$regularity_num <- ifelse(dat$regularity == "Irregular", 0, 1)
+  dat$plurality_num  <- ifelse(dat$plurality  == "Singular", 0, 1)
+  add_set(dat)
+}
 
+run_one <- function(file, fml_string, case = c("PR","SI")){
+  case <- match.arg(case)
+  dat0 <- read.csv(file, check.names = TRUE)
+  dat  <- if(case == "PR") prep_PR(dat0) else prep_SI(dat0)
+  
+  m <- tryCatch(
+    withCallingHandlers(
+      lmer(as.formula(fml_string), dat, REML = TRUE),
+      warning = function(w){
+        message("WARNING in FILE: ", file, " | CASE: ", case, " | ", conditionMessage(w))
+        invokeRestart("muffleWarning")
+      }
+    ),
+    error = function(e) e
+  )
+  
   s <- summary(m)
   list(
     ok=TRUE,
@@ -102,22 +124,22 @@ run_one <- function(file, fml_string, plurality_ref){
   )
 }
 
-out_file <- "results_treatment_pluralRef_vs_singularRef.txt"
+out_file <- "results_treat_PR_vs_SI_10M.txt"
 sink(out_file)
-cat("Treatment contrasts; comparing plurality reference levels\n")
+cat("Treatment contrasts: Case PR (Plural+Regular refs) vs Case SI (Singular+Irregular refs)\n")
 cat("Generated:", format(Sys.time()), "\n\n")
 
 for(i in seq_len(nrow(models))){
   file <- models$File[i]
   fml  <- models$formula[i]
-
+  
   cat("============================================================\n")
   cat("FILE:", file, "\n")
   cat("MODEL:", fml, "\n\n")
-
-  rP <- run_one(file, fml, "Plural")
-  rS <- run_one(file, fml, "Singular")
-
+  
+  rPR <- run_one(file, fml, "PR")
+  rSI <- run_one(file, fml, "SI")
+  
   print_block <- function(tag, r){
     cat("----", tag, "----\n")
     if(!r$ok){
@@ -126,13 +148,14 @@ for(i in seq_len(nrow(models))){
     }
     cat("AIC:", r$AIC, " | convergence:", r$convergence, "\n")
     cat("Formula used:", r$formula, "\n\n")
-    print(r$coefs)
+    print(round(r$coefs, 4)) 
     cat("\n")
   }
-
-  print_block("Plural as reference (plurality levels = Plural, Singular)", rP)
-  print_block("Singular as reference (plurality levels = Singular, Plural)", rS)
+  
+  print_block("Case PR: Plural + Regular references", rPR)
+  print_block("Case SI: Singular + Irregular references", rSI)
 }
 
 sink()
 cat("Wrote:", out_file, "\n")
+
