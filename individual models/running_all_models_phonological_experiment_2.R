@@ -104,19 +104,12 @@ run_one <- function(file, fml_string, case = c("PR","SI")){
     ))
   }
   
-  s <- withCallingHandlers(
-    summary(m),
-    warning = function(w){
-      warning_messages <<- c(warning_messages, conditionMessage(w))
-      invokeRestart("muffleWarning")
-    }
-  )
+  s <- summary(m)
   
   list(
     ok = TRUE,
     AIC = as.numeric(AIC(m)),
     convergence = hasConverged(m),
-    singular = isSingular(m),
     formula = paste(deparse(formula(m), width.cutoff = 500), collapse = " "),
     warnings = warning_messages,
     coefs = as.data.frame(s$coefficients)
@@ -130,8 +123,6 @@ cat("Treatment contrasts: Case PR (Plural+Regular refs) vs Case SI (Singular+Irr
 cat("Generated:", format(Sys.time()), "\n\n")
 cat("Number of models found:", nrow(models), "\n\n")
 
-singular_cases <- character(0)
-
 for(i in seq_len(nrow(models))){
   file <- models$File[i]
   fml  <- models$formula[i]
@@ -142,16 +133,6 @@ for(i in seq_len(nrow(models))){
   
   rPR <- run_one(file, fml, "PR")
   rSI <- run_one(file, fml, "SI")
-  
-  if (rPR$ok && isTRUE(rPR$singular)) {
-    cat("SINGULAR FIT IDENTIFIED: ", file, " | CASE: PR\n\n", sep = "")
-    singular_cases <- c(singular_cases, paste0(file, " | CASE: PR"))
-  }
-  
-  if (rSI$ok && isTRUE(rSI$singular)) {
-    cat("SINGULAR FIT IDENTIFIED: ", file, " | CASE: SI\n\n", sep = "")
-    singular_cases <- c(singular_cases, paste0(file, " | CASE: SI"))
-  }
   
   print_block <- function(tag, r){
     cat("----", tag, "----\n")
@@ -166,12 +147,12 @@ for(i in seq_len(nrow(models))){
       return()
     }
     
-    cat("AIC:", r$AIC, " | convergence:", r$convergence, " | singular:", r$singular, "\n")
+    cat("AIC:", r$AIC, " | convergence:", r$convergence, "\n")
     cat("Formula used:", r$formula, "\n")
     
     if(length(r$warnings) > 0){
       cat("Warnings:\n")
-      for(w in unique(r$warnings)) cat("-", w, "\n")
+      for(w in r$warnings) cat("-", w, "\n")
     }
     
     cat("\n")
@@ -181,15 +162,6 @@ for(i in seq_len(nrow(models))){
   
   print_block("Case PR: Plural + Regular references", rPR)
   print_block("Case SI: Singular + Irregular references", rSI)
-}
-
-cat("============================================================\n")
-cat("SUMMARY OF SINGULAR FITS\n\n")
-
-if(length(singular_cases) == 0){
-  cat("No singular fits identified.\n")
-} else {
-  for(x in singular_cases) cat("-", x, "\n")
 }
 
 sink()
