@@ -1,0 +1,5 @@
+"File","formula","AIC"
+"results_experiment_1_gpt_neo_1_3B.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality_num || Head)",858.523699069677
+"results_experiment_1_gpt_neo_125M.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality_num || Head)",812.10512461515
+"results_experiment_1_gpt_neo_2_7B.csv","Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 + plurality | Head)",796.800832799992
+"results_gpt_J_experiment_1.csv","Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 | Head)",769.110168727871

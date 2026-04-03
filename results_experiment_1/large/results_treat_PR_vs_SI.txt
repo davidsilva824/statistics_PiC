@@ -1,0 +1,105 @@
+Treatment contrasts: Case PR (Plural+Regular refs) vs Case SI (Singular+Irregular refs)
+Generated: 2026-04-03 03:05:17 
+
+Number of models found: 4 
+
+============================================================
+FILE: results_experiment_1_gpt_neo_1_3B.csv 
+MODEL: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality_num || Head) 
+
+---- Case PR: Plural + Regular references ----
+AIC: 859  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                                      Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)                             12.793      0.436  24.7   29.36   0.0000
+regularityIrregular                     -0.354      0.342  23.9   -1.04   0.3100
+pluralitySingular                       -0.990      0.302  31.3   -3.28   0.0025
+regularityIrregular:pluralitySingular    0.551      0.353 166.1    1.56   0.1201
+
+---- Case SI: Singular + Irregular references ----
+AIC: 857  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                                  Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)                         12.000      0.406  23.9  29.532    0.000
+regularityRegular                   -0.197      0.341  23.8  -0.577    0.569
+pluralityPlural                      0.439      0.311  29.4   1.413    0.168
+regularityRegular:pluralityPlural    0.551      0.351 168.7   1.568    0.119
+
+============================================================
+FILE: results_experiment_1_gpt_neo_125M.csv 
+MODEL: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality_num || Head) 
+
+---- Case PR: Plural + Regular references ----
+AIC: 812  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                                      Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)                             12.263      0.482  21.2  25.416   0.0000
+regularityIrregular                      0.521      0.284  25.1   1.834   0.0786
+pluralitySingular                       -0.627      0.335  20.8  -1.872   0.0754
+regularityIrregular:pluralitySingular   -0.261      0.303 167.2  -0.859   0.3914
+
+---- Case SI: Singular + Irregular references ----
+AIC: 813  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                                  Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)                         11.897      0.484  19.0  24.578   0.0000
+regularityRegular                   -0.261      0.284  25.1  -0.917   0.3680
+pluralityPlural                      0.887      0.332  21.0   2.676   0.0141
+regularityRegular:pluralityPlural   -0.261      0.304 166.4  -0.858   0.3919
+
+============================================================
+FILE: results_experiment_1_gpt_neo_2_7B.csv 
+MODEL: Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 + plurality | Head) 
+
+---- Case PR: Plural + Regular references ----
+AIC: 797  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 + plurality | Head) 
+
+                                      Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)                             12.851      0.462  22.7   27.84   0.0000
+regularityIrregular                     -0.432      0.219 181.2   -1.98   0.0495
+pluralitySingular                       -1.176      0.310  22.8   -3.79   0.0010
+regularityIrregular:pluralitySingular    0.674      0.309 181.2    2.18   0.0306
+
+---- Case SI: Singular + Irregular references ----
+AIC: 797  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 + plurality | Head) 
+
+                                  Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)                         11.917      0.373  27.0   31.93   0.0000
+regularityRegular                   -0.241      0.219 181.2   -1.11   0.2706
+pluralityPlural                      0.502      0.310  22.8    1.62   0.1193
+regularityRegular:pluralityPlural    0.674      0.309 181.2    2.18   0.0306
+
+============================================================
+FILE: results_gpt_J_experiment_1.csv 
+MODEL: Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 | Head) 
+
+---- Case PR: Plural + Regular references ----
+AIC: 769  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 | Head) 
+
+                                      Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)                             12.291      0.323  27.5   38.09   0.0000
+regularityIrregular                     -0.383      0.219 192.1   -1.74   0.0828
+pluralitySingular                       -0.963      0.219 192.1   -4.39   0.0000
+regularityIrregular:pluralitySingular    0.626      0.310 192.1    2.02   0.0450
+
+---- Case SI: Singular + Irregular references ----
+AIC: 769  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 | Head) 
+
+                                  Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)                         11.571      0.323  27.5   35.86    0.000
+regularityRegular                   -0.243      0.219 192.1   -1.11    0.269
+pluralityPlural                      0.337      0.219 192.1    1.54    0.126
+regularityRegular:pluralityPlural    0.626      0.310 192.1    2.02    0.045
+
+============================================================
+SUMMARY OF SINGULAR FITS
+
+No singular fits identified.
