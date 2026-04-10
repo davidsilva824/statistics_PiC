@@ -1,0 +1,434 @@
+Centered contrasts: normal model (regularity * plurality) vs nested model (regularity / plurality)
+Generated: 2026-04-08 03:39:40 
+
+Number of models found: 17 
+
+============================================================
+FILE: results_experiment_1_babyLlama_10M.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality_num || Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 + regularity | set) + (1 + plurality_num || Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 611  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                       Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)              13.889      0.608  13.4  22.860   0.0000
+regularity1              -0.154      0.210  13.0  -0.733   0.4767
+plurality1                0.533      0.224  13.0   2.379   0.0334
+regularity1:plurality1   -0.952      0.182 166.1  -5.228   0.0000
+
+---- Centered nested: regularity / plurality ----
+AIC: 611  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + (1 + regularity | set) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                               Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)                     13.8894      0.608 13.4  22.860   0.0000
+regularity1                     -0.1539      0.210 13.0  -0.733   0.4767
+regularityRegular:plurality1     1.0085      0.242 17.6   4.172   0.0006
+regularityIrregular:plurality1   0.0569      0.242 17.6   0.235   0.8167
+
+============================================================
+FILE: results_experiment_1_babyLlama_2_10M.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 624  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + ((1 | set) + (0 + regularity_num | set) + (0 + plurality_num | set) + (0 + regularity_num:plurality_num | set)) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                       Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)             13.4981      0.606 13.9   22.28   0.0000
+regularity1              0.0562      0.187 13.0    0.30   0.7688
+plurality1               0.3175      0.214 18.3    1.49   0.1545
+regularity1:plurality1  -1.1610      0.229 13.0   -5.08   0.0002
+
+---- Centered nested: regularity / plurality ----
+AIC: 624  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + ((1 | set) + (0 + regularity_num | set) + (0 + plurality_num | set) + (0 + regularity_num:plurality_num | set)) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                               Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)                     13.4981      0.606 13.9   22.28    0.000
+regularity1                      0.0562      0.187 13.0    0.30    0.769
+regularityRegular:plurality1     0.8980      0.242 27.1    3.70    0.001
+regularityIrregular:plurality1  -0.2630      0.242 27.1   -1.08    0.287
+
+============================================================
+FILE: results_experiment_1_distill_tree__360_10M.csv.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality_num || Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 + regularity | set) + (1 + plurality_num || Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 574  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                       Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)             13.5228      0.547  13.2  24.712    0.000
+regularity1             -0.0285      0.173  13.0  -0.165    0.872
+plurality1               0.3824      0.225  13.0   1.701    0.113
+regularity1:plurality1  -0.9708      0.169 169.0  -5.744    0.000
+
+---- Centered nested: regularity / plurality ----
+AIC: 574  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + (1 + regularity | set) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                               Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)                     13.5228      0.547 13.2  24.712   0.0000
+regularity1                     -0.0285      0.173 13.0  -0.165   0.8717
+regularityRegular:plurality1     0.8678      0.240 16.9   3.614   0.0022
+regularityIrregular:plurality1  -0.1030      0.240 16.9  -0.429   0.6734
+
+============================================================
+FILE: results_experiment_1_distill_tree__58_10M.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality_num || Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 + regularity | set) + (1 + plurality_num || Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 604  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                       Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)             13.5145      0.519  13.3  26.036    0.000
+regularity1             -0.0194      0.181  13.0  -0.107    0.916
+plurality1               0.3820      0.267  13.0   1.432    0.176
+regularity1:plurality1  -0.9409      0.182 168.5  -5.173    0.000
+
+---- Centered nested: regularity / plurality ----
+AIC: 604  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + (1 + regularity | set) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                               Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)                     13.5145      0.519 13.3  26.036    0.000
+regularity1                     -0.0194      0.181 13.0  -0.107    0.916
+regularityRegular:plurality1     0.8524      0.282 16.2   3.025    0.008
+regularityIrregular:plurality1  -0.0885      0.282 16.2  -0.314    0.758
+
+============================================================
+FILE: results_experiment_1_distill_tree__95_10M.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality_num || Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 + regularity | set) + (1 + plurality_num || Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 604  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                       Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)             13.8289      0.551  13.3 25.1167    0.000
+regularity1             -0.0152      0.162  13.0 -0.0942    0.926
+plurality1               0.4519      0.250  13.0  1.8066    0.094
+regularity1:plurality1  -1.0679      0.182 169.5 -5.8805    0.000
+
+---- Centered nested: regularity / plurality ----
+AIC: 604  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + (1 + regularity | set) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                               Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)                     13.8289      0.551 13.3 25.1167   0.0000
+regularity1                     -0.0152      0.162 13.0 -0.0942   0.9264
+regularityRegular:plurality1     0.9859      0.266 16.6  3.7045   0.0018
+regularityIrregular:plurality1  -0.0820      0.266 16.6 -0.3081   0.7618
+
+============================================================
+FILE: results_experiment_1_gpt_2_10M.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 773  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + ((1 | set) + (0 + regularity_num | set) + (0 + plurality_num | set) + (0 + regularity_num:plurality_num | set)) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                       Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)             14.4835      0.670 15.2  21.617   0.0000
+regularity1              0.0411      0.291 13.0   0.141   0.8902
+plurality1               0.8859      0.249 16.7   3.559   0.0025
+regularity1:plurality1  -1.0419      0.451 13.0  -2.311   0.0379
+
+---- Centered nested: regularity / plurality ----
+AIC: 773  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + ((1 | set) + (0 + regularity_num | set) + (0 + plurality_num | set) + (0 + regularity_num:plurality_num | set)) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                               Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)                     14.4835      0.670 15.2  21.617   0.0000
+regularity1                      0.0411      0.291 13.0   0.141   0.8902
+regularityRegular:plurality1     1.4068      0.336 29.6   4.189   0.0002
+regularityIrregular:plurality1   0.3650      0.336 29.6   1.087   0.2859
+
+============================================================
+FILE: results_experiment_1_gpt_bert_10M_causal.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 + plurality_num || Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 | set) + (1 + plurality_num || Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 767  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 | set) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                       Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)              15.595      0.801  13.4   19.47   0.0000
+regularity1               0.238      0.138 181.8    1.73   0.0856
+plurality1                0.882      0.310  13.0    2.84   0.0138
+regularity1:plurality1   -0.670      0.275 181.8   -2.44   0.0158
+
+---- Centered nested: regularity / plurality ----
+AIC: 767  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + (1 | set) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                               Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)                      15.595      0.801  13.4   19.47   0.0000
+regularity1                       0.238      0.138 181.8    1.73   0.0856
+regularityRegular:plurality1      1.217      0.339  18.6    3.59   0.0020
+regularityIrregular:plurality1    0.547      0.339  18.6    1.61   0.1237
+
+============================================================
+FILE: results_experiment_1_gpt_bert_10M_masked.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num || set) + (1 + plurality_num || Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 + regularity_num || set) + (1 + plurality_num || Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 689  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + ((1 | set) + (0 + regularity_num | set)) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                       Estimate Std. Error  df t value Pr(>|t|)
+(Intercept)              14.445      0.585  15   24.68   0.0000
+regularity1               0.233      0.185  13    1.26   0.2313
+plurality1                0.786      0.243  13    3.23   0.0065
+regularity1:plurality1   -0.505      0.216 168   -2.33   0.0208
+
+---- Centered nested: regularity / plurality ----
+AIC: 689  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + ((1 | set) + (0 + regularity_num | set)) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                               Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)                      14.445      0.585 15.0   24.68   0.0000
+regularity1                       0.233      0.185 13.0    1.26   0.2313
+regularityRegular:plurality1      1.039      0.266 18.6    3.90   0.0010
+regularityIrregular:plurality1    0.533      0.266 18.6    2.01   0.0597
+
+============================================================
+FILE: results_experiment_1_gpt_bert_10M_mixed.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality | Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality | Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 735  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + ((1 | set) + (0 + regularity_num | set) + (0 + plurality_num | set) + (0 + regularity_num:plurality_num | set)) + (1 + plurality | Head) 
+
+                       Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)              14.376      0.607 14.5  23.682   0.0000
+regularity1               0.138      0.204 13.0   0.676   0.5109
+plurality1                0.865      0.213 12.9   4.067   0.0013
+regularity1:plurality1   -0.536      0.372 13.0  -1.438   0.1739
+
+---- Centered nested: regularity / plurality ----
+AIC: 735  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + ((1 | set) + (0 + regularity_num | set) + (0 + plurality_num | set) + (0 + regularity_num:plurality_num | set)) + (1 + plurality | Head) 
+
+                               Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)                      14.376      0.607 14.5  23.682   0.0000
+regularity1                       0.138      0.204 13.0   0.676   0.5109
+regularityRegular:plurality1      1.133      0.283 25.5   4.008   0.0005
+regularityIrregular:plurality1    0.597      0.283 25.5   2.113   0.0446
+
+============================================================
+FILE: results_experiment_1_gpt_wee_large.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num || set) + (1 + regularity_num * plurality_num || Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 + regularity_num || set) + (1 + regularity_num * plurality_num || Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 793  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + ((1 | set) + (0 + regularity_num | set)) + ((1 | Head) + (0 + regularity_num | Head) + (0 + plurality_num | Head) + (0 + regularity_num:plurality_num | Head)) 
+
+                       Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)             14.0202      0.585 13.9 23.9743    0.000
+regularity1              0.0238      0.289 11.8  0.0826    0.936
+plurality1               0.3486      0.299 13.0  1.1671    0.264
+regularity1:plurality1  -0.6424      0.437 13.0 -1.4690    0.166
+
+---- Centered nested: regularity / plurality ----
+AIC: 793  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + ((1 | set) + (0 + regularity_num | set)) + ((1 | Head) + (0 + regularity_num | Head) + (0 + plurality_num | Head) + (0 + regularity_num:plurality_num | Head)) 
+
+                               Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)                     14.0202      0.585 13.9 23.9742    0.000
+regularity1                      0.0238      0.289 11.8  0.0826    0.936
+regularityRegular:plurality1     0.6698      0.370 23.8  1.8094    0.083
+regularityIrregular:plurality1   0.0274      0.370 23.8  0.0741    0.942
+
+============================================================
+FILE: results_experiment_1_gpt_wee_medium.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 657  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + ((1 | set) + (0 + regularity_num | set) + (0 + plurality_num | set) + (0 + regularity_num:plurality_num | set)) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                       Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)              13.110      0.542 13.3   24.17   0.0000
+regularity1              -0.340      0.145 13.0   -2.34   0.0359
+plurality1                0.318      0.226 13.8    1.41   0.1813
+regularity1:plurality1   -0.506      0.296 13.0   -1.71   0.1108
+
+---- Centered nested: regularity / plurality ----
+AIC: 657  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + ((1 | set) + (0 + regularity_num | set) + (0 + plurality_num | set) + (0 + regularity_num:plurality_num | set)) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                               Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)                     13.1104      0.542 13.3  24.170   0.0000
+regularity1                     -0.3403      0.145 13.0  -2.340   0.0359
+regularityRegular:plurality1     0.5711      0.270 23.6   2.115   0.0452
+regularityIrregular:plurality1   0.0647      0.270 23.6   0.239   0.8128
+
+============================================================
+FILE: results_experiment_1_gpt_wee_small.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num || set) + (1 + regularity_num + plurality_num || Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 + regularity_num || set) + (1 + regularity_num + plurality_num || Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 457  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + ((1 | set) + (0 + regularity_num | set)) + ((1 | Head) + (0 + regularity_num | Head) + (0 + plurality_num | Head)) 
+
+                       Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)              13.566      0.601  13.1   22.58   0.0000
+regularity1              -0.461      0.136  13.5   -3.40   0.0046
+plurality1                0.358      0.129  13.0    2.77   0.0158
+regularity1:plurality1   -0.515      0.126 152.5   -4.10   0.0001
+
+---- Centered nested: regularity / plurality ----
+AIC: 457  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + ((1 | set) + (0 + regularity_num | set)) + ((1 | Head) + (0 + regularity_num | Head) + (0 + plurality_num | Head)) 
+
+                               Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)                      13.566      0.601 13.1  22.581   0.0000
+regularity1                      -0.461      0.136 13.5  -3.396   0.0046
+regularityRegular:plurality1      0.616      0.144 19.8   4.286   0.0004
+regularityIrregular:plurality1    0.101      0.144 19.8   0.701   0.4916
+
+============================================================
+FILE: results_experiment_1_MOEP.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num + plurality_num || set) + (1 | Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 + regularity_num + plurality_num || set) + (1 | Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 681  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + ((1 | set) + (0 + regularity_num | set) + (0 + plurality_num | set)) + (1 | Head) 
+
+                       Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)              13.494      0.612  13.8  22.064   0.0000
+regularity1               0.067      0.174  13.0   0.385   0.7067
+plurality1                0.902      0.157  13.0   5.748   0.0001
+regularity1:plurality1   -0.135      0.224 168.1  -0.600   0.5492
+
+---- Centered nested: regularity / plurality ----
+AIC: 681  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + ((1 | set) + (0 + regularity_num | set) + (0 + plurality_num | set)) + (1 | Head) 
+
+                               Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)                      13.494      0.612 13.8  22.064   0.0000
+regularity1                       0.067      0.174 13.0   0.385   0.7067
+regularityRegular:plurality1      0.970      0.193 29.1   5.027   0.0000
+regularityIrregular:plurality1    0.835      0.193 29.1   4.329   0.0002
+
+============================================================
+FILE: results_experiment_1_MOP.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 + plurality_num || set) + (1 + plurality_num || Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 + plurality_num || set) + (1 + plurality_num || Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 864  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + ((1 | set) + (0 + plurality_num | set)) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                       Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)             13.3888      0.537  14.2  24.925   0.0000
+regularity1              0.0232      0.175 168.8   0.132   0.8949
+plurality1               0.9674      0.400  16.8   2.416   0.0273
+regularity1:plurality1  -0.6063      0.350 168.8  -1.732   0.0851
+
+---- Centered nested: regularity / plurality ----
+AIC: 864  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + ((1 | set) + (0 + plurality_num | set)) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                               Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)                     13.3888      0.537  14.2  24.925   0.0000
+regularity1                      0.0232      0.175 168.8   0.132   0.8949
+regularityRegular:plurality1     1.2706      0.437  24.0   2.908   0.0077
+regularityIrregular:plurality1   0.6643      0.437  24.0   1.520   0.1415
+
+============================================================
+FILE: results_experiment_1_OPT_10M.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 880  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + ((1 | set) + (0 + regularity_num | set) + (0 + plurality_num | set) + (0 + regularity_num:plurality_num | set)) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                       Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)              16.555      0.918 14.4   18.04   0.0000
+regularity1              -0.429      0.289 13.0   -1.48   0.1620
+plurality1                1.499      0.371 18.2    4.04   0.0008
+regularity1:plurality1   -1.206      0.889 13.0   -1.36   0.1983
+
+---- Centered nested: regularity / plurality ----
+AIC: 880  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + ((1 | set) + (0 + regularity_num | set) + (0 + plurality_num | set) + (0 + regularity_num:plurality_num | set)) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                               Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)                      16.555      0.918 14.4   18.04   0.0000
+regularity1                      -0.429      0.289 13.0   -1.48   0.1620
+regularityRegular:plurality1      2.102      0.579 27.8    3.63   0.0011
+regularityIrregular:plurality1    0.896      0.579 27.8    1.55   0.1332
+
+============================================================
+FILE: results_experiment_1_what_if_baseline.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 + regularity_num || Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 | set) + (1 + regularity_num || Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 907  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 | set) + ((1 | Head) + (0 + regularity_num | Head)) 
+
+                       Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)              15.212      0.721  13.2  21.113    0.000
+regularity1              -0.217      0.380  13.0  -0.572    0.577
+plurality1                0.320      0.200 176.5   1.599    0.112
+regularity1:plurality1   -0.653      0.400 176.5  -1.633    0.104
+
+---- Centered nested: regularity / plurality ----
+AIC: 907  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + (1 | set) + ((1 | Head) + (0 + regularity_num | Head)) 
+
+                               Estimate Std. Error    df t value Pr(>|t|)
+(Intercept)                     15.2122      0.721  13.2 21.1135   0.0000
+regularity1                     -0.2173      0.380  13.0 -0.5718   0.5772
+regularityRegular:plurality1     0.6465      0.283 176.5  2.2853   0.0235
+regularityIrregular:plurality1  -0.0067      0.283 176.5 -0.0236   0.9812
+
+============================================================
+FILE: results_experiment_1_ZLATA.csv 
+MODEL (normal): Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head) 
+MODEL (nested): Surprisal.head ~ 1 + regularity / plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head) 
+
+---- Centered normal: regularity * plurality ----
+AIC: 482  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + ((1 | set) + (0 + regularity_num | set) + (0 + plurality_num | set) + (0 + regularity_num:plurality_num | set)) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                       Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)             14.1709      0.690 13.1  20.550   0.0000
+regularity1              0.0347      0.125 13.0   0.276   0.7867
+plurality1               0.3755      0.160 13.4   2.353   0.0345
+regularity1:plurality1  -0.3330      0.213 13.0  -1.560   0.1426
+
+---- Centered nested: regularity / plurality ----
+AIC: 482  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + ((1 | set) + (0 + regularity_num | set) + (0 + plurality_num | set) + (0 + regularity_num:plurality_num | set)) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                               Estimate Std. Error   df t value Pr(>|t|)
+(Intercept)                     14.1709      0.690 13.1  20.549   0.0000
+regularity1                      0.0347      0.125 13.0   0.276   0.7867
+regularityRegular:plurality1     0.5420      0.192 23.3   2.824   0.0096
+regularityIrregular:plurality1   0.2090      0.192 23.3   1.089   0.2873
+
+============================================================
+SUMMARY OF SINGULAR FITS
+
+No singular fits identified.

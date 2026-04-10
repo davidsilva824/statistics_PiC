@@ -1,5 +1,5 @@
 Treatment contrasts: Case PR (Plural+Regular refs) vs Case SI (Singular+Irregular refs)
-Generated: 2026-04-03 03:05:17 
+Generated: 2026-04-08 03:09:20 
 
 Number of models found: 4 
 
@@ -18,14 +18,14 @@ pluralitySingular                       -0.990      0.302  31.3   -3.28   0.0025
 regularityIrregular:pluralitySingular    0.551      0.353 166.1    1.56   0.1201
 
 ---- Case SI: Singular + Irregular references ----
-AIC: 857  | convergence: 1  | singular: FALSE 
+AIC: 859  | convergence: 1  | singular: FALSE 
 Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + ((1 | Head) + (0 + plurality_num | Head)) 
 
                                   Estimate Std. Error    df t value Pr(>|t|)
-(Intercept)                         12.000      0.406  23.9  29.532    0.000
-regularityRegular                   -0.197      0.341  23.8  -0.577    0.569
-pluralityPlural                      0.439      0.311  29.4   1.413    0.168
-regularityRegular:pluralityPlural    0.551      0.351 168.7   1.568    0.119
+(Intercept)                         12.000      0.453  24.9  26.476    0.000
+regularityRegular                   -0.197      0.342  23.9  -0.576    0.570
+pluralityPlural                      0.439      0.302  31.3   1.455    0.156
+regularityRegular:pluralityPlural    0.551      0.353 166.1   1.563    0.120
 
 ============================================================
 FILE: results_experiment_1_gpt_neo_125M.csv 
@@ -42,14 +42,14 @@ pluralitySingular                       -0.627      0.335  20.8  -1.872   0.0754
 regularityIrregular:pluralitySingular   -0.261      0.303 167.2  -0.859   0.3914
 
 ---- Case SI: Singular + Irregular references ----
-AIC: 813  | convergence: 1  | singular: FALSE 
+AIC: 812  | convergence: 1  | singular: FALSE 
 Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + ((1 | Head) + (0 + plurality_num | Head)) 
 
                                   Estimate Std. Error    df t value Pr(>|t|)
-(Intercept)                         11.897      0.484  19.0  24.578   0.0000
-regularityRegular                   -0.261      0.284  25.1  -0.917   0.3680
-pluralityPlural                      0.887      0.332  21.0   2.676   0.0141
-regularityRegular:pluralityPlural   -0.261      0.304 166.4  -0.858   0.3919
+(Intercept)                         11.897      0.535  26.0  22.236    0.000
+regularityRegular                   -0.261      0.284  25.1  -0.917    0.368
+pluralityPlural                      0.887      0.335  20.8   2.650    0.015
+regularityRegular:pluralityPlural   -0.261      0.303 167.2  -0.859    0.391
 
 ============================================================
 FILE: results_experiment_1_gpt_neo_2_7B.csv 

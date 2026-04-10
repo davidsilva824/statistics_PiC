@@ -1,0 +1,26 @@
+Found 17 files to process.
+
+
+--- SELECTED MODEL: Centered interaction ---
+
+AIC: 14156  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 + plurality | model) + ((1 | set) + (0 + regularity_num | set) + (0 + plurality_num | set) + (0 + regularity_num:plurality_num | set)) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                       Estimate Std. Error      df t value Pr(>|t|)
+(Intercept)             14.1571     0.6003 17.6521 23.5852   0.0000
+regularity1             -0.0477     0.1014 13.0020 -0.4699   0.6462
+plurality1               0.6220     0.1681 17.5304  3.7012   0.0017
+regularity1:plurality1  -0.7319     0.1928 13.0033 -3.7965   0.0022
+
+
+
+--- SELECTED MODEL: Centered nested ---
+
+AIC: 14156  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity/plurality + (1 + plurality | model) + ((1 | set) + (0 + regularity_num | set) + (0 + plurality_num | set) + (0 + regularity_num:plurality_num | set)) + ((1 | Head) + (0 + plurality_num | Head)) 
+
+                               Estimate Std. Error      df t value Pr(>|t|)
+(Intercept)                     14.1571     0.6002 17.6559 23.5862   0.0000
+regularity1                     -0.0477     0.1014 12.9981 -0.4699   0.6462
+regularityRegular:plurality1     0.9880     0.1937 27.0224  5.0994   0.0000
+regularityIrregular:plurality1   0.2561     0.1937 27.0224  1.3219   0.1973

@@ -1,0 +1,18 @@
+"File","formula","AIC"
+"results_experiment_1_babyLlama_10M.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality_num || Head)",611.269349884524
+"results_experiment_1_babyLlama_2_10M.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head)",624.212487099735
+"results_experiment_1_distill_tree__360_10M.csv.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality_num || Head)",573.844938119745
+"results_experiment_1_distill_tree__58_10M.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality_num || Head)",603.787235367087
+"results_experiment_1_distill_tree__95_10M.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality_num || Head)",604.485854305908
+"results_experiment_1_gpt_2_10M.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head)",772.774705455039
+"results_experiment_1_gpt_bert_10M_causal.csv","Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 + plurality_num || Head)",766.508226426284
+"results_experiment_1_gpt_bert_10M_masked.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num || set) + (1 + plurality_num || Head)",688.754249981259
+"results_experiment_1_gpt_bert_10M_mixed.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality | Head)",735.352930249385
+"results_experiment_1_gpt_wee_large.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num || set) + (1 + regularity_num * plurality_num || Head)",793.359832607431
+"results_experiment_1_gpt_wee_medium.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head)",656.810692646842
+"results_experiment_1_gpt_wee_small.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num || set) + (1 + regularity_num + plurality_num || Head)",456.760816053533
+"results_experiment_1_MOEP.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num + plurality_num || set) + (1 | Head)",680.802849907347
+"results_experiment_1_MOP.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + plurality_num || set) + (1 + plurality_num || Head)",864.323612672994
+"results_experiment_1_OPT_10M.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head)",879.930551102665
+"results_experiment_1_what_if_baseline.csv","Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 + regularity_num || Head)",906.578370901775
+"results_experiment_1_ZLATA.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality_num || Head)",482.381471164359

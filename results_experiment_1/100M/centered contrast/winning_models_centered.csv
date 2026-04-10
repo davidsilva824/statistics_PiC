@@ -1,0 +1,18 @@
+"File","formula","AIC"
+"results_experiment_1_babble_phonetic_BPE_with_spaces.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num || set) + (1 + plurality | Head)",959.447086065999
+"results_experiment_1_babble_phonetic_char_no_spaces.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity * plurality | set) + (1 + plurality_num || Head)",882.004603436041
+"results_experiment_1_babble_phonetic_char_with_spaces.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + regularity + plurality | Head)",807.073871793912
+"results_experiment_1_babble_txt_BPE_with_spaces.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + plurality_num || set) + (1 + plurality_num || Head)",953.158713327443
+"results_experiment_1_babble_txt_char_no_spaces.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity + plurality | set) + (1 + plurality_num || Head)",871.334285024941
+"results_experiment_1_babble_txt_char_with_spaces.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num + plurality_num || set) + (1 + regularity + plurality | Head)",793.418894823467
+"results_experiment_1_babyLlama_100M.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num || set) + (1 + plurality_num || Head)",651.536210951826
+"results_experiment_1_CLASS_IT.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + plurality_num || set) + (1 + regularity_num + plurality_num || Head)",1016.37212423262
+"results_experiment_1_gpt_2_100M.csv","Surprisal.head ~ 1 + regularity * plurality + (1 | set) + (1 + plurality_num || Head)",827.04145440614
+"results_experiment_1_gpt_bert_100M_causal.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity | set) + (1 + plurality | Head)",829.508022038089
+"results_experiment_1_gpt_bert_100M_masked.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num + plurality_num || set) + (1 + plurality | Head)",791.837179543186
+"results_experiment_1_gpt_bert_100M_mixed.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num + plurality_num || set) + (1 + plurality_num || Head)",764.984614936811
+"results_experiment_1_grapheme_llama_no_spaces.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity + plurality | set) + (1 + regularity_num + plurality_num || Head)",849.357631459956
+"results_experiment_1_grapheme_llama_with_spaces.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num || set) + (1 + plurality | Head)",752.317603585229
+"results_experiment_1_OPT_100M.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num * plurality_num || set) + (1 + plurality | Head)",872.185520041168
+"results_experiment_1_phoneme_llama.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity * plurality | set) + (1 + plurality | Head)",864.531146673709
+"results_experiment_1_phoneme_llama_no_spaces.csv","Surprisal.head ~ 1 + regularity * plurality + (1 + regularity_num * plurality_num || set) + (1 + regularity | Head)",970.966980132019
