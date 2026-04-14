@@ -1,0 +1,35 @@
+Found 17 files to process.
+
+
+--- GLOBAL MODEL SELECTION COMPLETE ---
+
+      AIC convergence
+ 14165.13           1
+                                                                                                                                            formula
+ Surprisal.head ~ 1 + regularity * plurality + (1 + plurality | model) + (1 + regularity_num || set) + (1 + regularity_num * plurality_num || Head)
+                   family
+ model_|__set_||__Head_||
+
+--- SELECTED MODEL: Normal references ---
+
+AIC: 14165.13  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 + plurality | model) + ((1 | set) + (0 + regularity_num | set)) + ((1 | Head) + (0 + regularity_num | Head) + (0 + plurality_num | Head) + (0 + regularity_num:plurality_num | Head)) 
+
+                                      Estimate Std. Error      df t value Pr(>|t|)
+(Intercept)                            14.6749     0.6182 18.2868 23.7381   0.0000
+regularityIrregular                    -0.4136     0.1405 16.4104 -2.9444   0.0093
+pluralitySingular                      -0.9880     0.1904 17.0699 -5.1897   0.0001
+regularityIrregular:pluralitySingular   0.7319     0.1400 16.0122  5.2276   0.0001
+
+
+--- SELECTED MODEL: Inverted references ---
+
+AIC: 14165.13  | convergence: 1  | singular: FALSE 
+Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 + plurality | model) + ((1 | set) + (0 + regularity_num | set)) + ((1 | Head) + (0 + regularity_num | Head) + (0 + plurality_num | Head) + (0 + regularity_num:plurality_num | Head)) 
+
+                                  Estimate Std. Error      df t value Pr(>|t|)
+(Intercept)                        14.0052     0.6424 21.2577 21.7998   0.0000
+regularityRegular                  -0.3183     0.1731 15.5120 -1.8386   0.0852
+pluralityPlural                     0.2561     0.2156 18.6269  1.1879   0.2498
+regularityRegular:pluralityPlural   0.7319     0.1400 16.0123  5.2276   0.0001
+

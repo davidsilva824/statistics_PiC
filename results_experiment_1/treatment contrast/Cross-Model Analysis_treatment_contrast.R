@@ -6,15 +6,8 @@ library(stringr)
 # this folder contains the results files obtained from study_pic_4: https://github.com/davidsilva824/study_pic_4 
 setwd("C:/Users/Admin/Desktop/Dissertação/código/satistics_PiC/Statistics_PiC/results_experiment_1/10M")
 
-# To read one or more specific files in the folder:
-file_list <- c(
-  "results_experiment_1_OPT_10M.csv",
-  "results_experiment_1_gpt_bert_10M_causal.csv",
-  "results_experiment_1_babyLlama_10M.csv",
-  "results_experiment_1_gpt_2_10M.csv",
-  "results_experiment_1_distill_tree__95_10M.csv",
-  "results_experiment_1_ZLATA.csv"
-)
+file_list <- list.files(pattern="\\.csv$", full.names = FALSE)
+
 
 
 # -------------------------------------------------------------------------------------------
