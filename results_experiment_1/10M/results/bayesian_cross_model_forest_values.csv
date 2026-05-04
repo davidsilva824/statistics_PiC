@@ -1,0 +1,86 @@
+"model","effect","estimate","lower95","upper95"
+"babyLlama_10M","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"babyLlama_2_10M","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"distill_tree__360_10M","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"distill_tree__58_10M","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"distill_tree__95_10M","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"gpt_2_10M","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"gpt_bert_10M_causal","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"gpt_bert_10M_masked","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"gpt_bert_10M_mixed","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"gpt_wee_large","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"gpt_wee_medium","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"gpt_wee_small","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"MOEP","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"MOP","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"OPT_10M","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"what_if_baseline","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"ZLATA","Regularity × plurality interaction",0.731882878749773,0.518814684810787,0.929902909269958
+"babyLlama_10M","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"babyLlama_2_10M","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"distill_tree__360_10M","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"distill_tree__58_10M","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"distill_tree__95_10M","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"gpt_2_10M","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"gpt_bert_10M_causal","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"gpt_bert_10M_masked","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"gpt_bert_10M_mixed","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"gpt_wee_large","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"gpt_wee_medium","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"gpt_wee_small","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"MOEP","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"MOP","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"OPT_10M","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"what_if_baseline","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"ZLATA","Regular plural effect
+(e.g., ducks trader vs. duck trader)",0.987573909103831,0.844211842716148,1.12911972330211
+"babyLlama_10M","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877
+"babyLlama_2_10M","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877
+"distill_tree__360_10M","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877
+"distill_tree__58_10M","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877
+"distill_tree__95_10M","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877
+"gpt_2_10M","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877
+"gpt_bert_10M_causal","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877
+"gpt_bert_10M_masked","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877
+"gpt_bert_10M_mixed","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877
+"gpt_wee_large","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877
+"gpt_wee_medium","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877
+"gpt_wee_small","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877
+"MOEP","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877
+"MOP","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877
+"OPT_10M","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877
+"what_if_baseline","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877
+"ZLATA","Irregular plural effect
+(e.g., geese trader vs. goose trader)",0.255691030354059,0.118281212847894,0.398310602136877

@@ -1,0 +1,41 @@
+"Group","Hypothesis","Estimate","Est.Error","CI.Lower","CI.Upper","Evid.Ratio","Post.Prob","Star","effect"
+"babble_txt_BPE_with_spaces","(regularityIrregular:pluralitySingular) > 0",0.703369863058409,0.199443225153033,0.31148908586475,1.101928740925,1332.33333333333,0.99925,"*","Regularity × plurality interaction"
+"babyLlama_100M","(regularityIrregular:pluralitySingular) > 0",0.690154524612233,0.201000862753863,0.2901330855695,1.08408398005,1024.64102564103,0.999025,"*","Regularity × plurality interaction"
+"CLASS_IT","(regularityIrregular:pluralitySingular) > 0",0.6696849310362,0.20307907256923,0.2538252631525,1.05883230567,486.80487804878,0.99795,"*","Regularity × plurality interaction"
+"gpt_2_100M","(regularityIrregular:pluralitySingular) > 0",0.686470224409242,0.198697938944054,0.28817872275,1.07277272455,1051.63157894737,0.99905,"*","Regularity × plurality interaction"
+"gpt_bert_100M_causal","(regularityIrregular:pluralitySingular) > 0",0.708099458857112,0.205533160658228,0.30870572775,1.11974009525,1051.63157894737,0.99905,"*","Regularity × plurality interaction"
+"gpt_bert_100M_masked","(regularityIrregular:pluralitySingular) > 0",0.706807849172102,0.196390270448742,0.32289082924425,1.100093354,2104.26315789474,0.999525,"*","Regularity × plurality interaction"
+"gpt_bert_100M_mixed","(regularityIrregular:pluralitySingular) > 0",0.727803473007738,0.201288195669088,0.340785883625,1.138382147,4443.44444444444,0.999775,"*","Regularity × plurality interaction"
+"OPT_100M","(regularityIrregular:pluralitySingular) > 0",0.692678970811476,0.201529373519103,0.29000624975,1.08783298875,1175.47058823529,0.99915,"*","Regularity × plurality interaction"
+"babble_txt_BPE_with_spaces","(-pluralitySingular) > 0",1.06955373699843,0.303958531934297,0.452075891475,1.6483333842,1427.57142857143,0.9993,"*","Regular plural effect
+(e.g., ducks trader vs. duck trader)"
+"babyLlama_100M","(-pluralitySingular) > 0",1.03602602534723,0.304885180251181,0.423231860175,1.619126473075,929.232558139535,0.998925,"*","Regular plural effect
+(e.g., ducks trader vs. duck trader)"
+"CLASS_IT","(-pluralitySingular) > 0",1.0346370653836,0.305750874801772,0.4159804666,1.6196994380045,726.272727272727,0.998625,"*","Regular plural effect
+(e.g., ducks trader vs. duck trader)"
+"gpt_2_100M","(-pluralitySingular) > 0",1.2573587089018,0.309589549953042,0.65804686675,1.8712422005,13332.3333333333,0.999925,"*","Regular plural effect
+(e.g., ducks trader vs. duck trader)"
+"gpt_bert_100M_causal","(-pluralitySingular) > 0",1.23049764226821,0.306290831476713,0.63080968822195,1.8357803925,9999,0.9999,"*","Regular plural effect
+(e.g., ducks trader vs. duck trader)"
+"gpt_bert_100M_masked","(-pluralitySingular) > 0",1.23013681669223,0.303687905906237,0.639370619525,1.83412646,6665.66666666667,0.99985,"*","Regular plural effect
+(e.g., ducks trader vs. duck trader)"
+"gpt_bert_100M_mixed","(-pluralitySingular) > 0",1.19133503737012,0.299355698999127,0.6007385101,1.7788330905,4443.44444444444,0.999775,"*","Regular plural effect
+(e.g., ducks trader vs. duck trader)"
+"OPT_100M","(-pluralitySingular) > 0",1.04060716087364,0.304608274807938,0.431223427425,1.624934054665,1051.63157894737,0.99905,"*","Regular plural effect
+(e.g., ducks trader vs. duck trader)"
+"babble_txt_BPE_with_spaces","(-(pluralitySingular+regularityIrregular:pluralitySingular)) > 0",0.366183873940026,0.321147989023565,-0.28726111645,0.98020011644,6.94438927507448,0.874125,"","Irregular plural effect
+(e.g., geese trader vs. goose trader)"
+"babyLlama_100M","(-(pluralitySingular+regularityIrregular:pluralitySingular)) > 0",0.345871500734994,0.322009155780445,-0.3065227274,0.9657165345925,6.19683339330695,0.86105,"","Irregular plural effect
+(e.g., geese trader vs. goose trader)"
+"CLASS_IT","(-(pluralitySingular+regularityIrregular:pluralitySingular)) > 0",0.364952134347403,0.322163941727945,-0.28273341675,0.9870464778075,6.77453838678329,0.871375,"","Irregular plural effect
+(e.g., geese trader vs. goose trader)"
+"gpt_2_100M","(-(pluralitySingular+regularityIrregular:pluralitySingular)) > 0",0.57088848449256,0.325169690443309,-0.0653107029199999,1.217442907375,25.4026402640264,0.962125,"","Irregular plural effect
+(e.g., geese trader vs. goose trader)"
+"gpt_bert_100M_causal","(-(pluralitySingular+regularityIrregular:pluralitySingular)) > 0",0.522398183411102,0.324562846689111,-0.117459454675,1.1657111358,17.4416781927155,0.945775,"","Irregular plural effect
+(e.g., geese trader vs. goose trader)"
+"gpt_bert_100M_masked","(-(pluralitySingular+regularityIrregular:pluralitySingular)) > 0",0.523328967520124,0.319331779167123,-0.103847489475,1.154142532245,18.8019801980198,0.9495,"","Irregular plural effect
+(e.g., geese trader vs. goose trader)"
+"gpt_bert_100M_mixed","(-(pluralitySingular+regularityIrregular:pluralitySingular)) > 0",0.463531564362381,0.319096583921018,-0.1709110653425,1.087876752425,12.7504297009282,0.927275,"","Irregular plural effect
+(e.g., geese trader vs. goose trader)"
+"OPT_100M","(-(pluralitySingular+regularityIrregular:pluralitySingular)) > 0",0.347928190062169,0.322912415624122,-0.30016608375,0.97265899525,6.21630885801912,0.861425,"","Irregular plural effect
+(e.g., geese trader vs. goose trader)"

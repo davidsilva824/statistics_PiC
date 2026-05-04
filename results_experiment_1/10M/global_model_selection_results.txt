@@ -1,35 +1,117 @@
 Found 17 files to process.
 
 
---- GLOBAL MODEL SELECTION COMPLETE ---
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.000Gradient ev
+Chain 1: 1000 transitions using 10 leap1000 transitions using 10 leapfrog steps per trans
+Chain 1: Adjust your expectations accorAdjust 
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 2000 [  0%] Iteration
+Chain 1: Iteration:  200 / 2000 [ 10%] Iteration
+Chain 1: Iteration:  400 / 2000 [ 20%] Iteration
+Chain 1: Iteration:  600 / 2000 [ 30%] Iteration
+Chain 1: Iteration:  800 / 2000 [ 40%] Iteration
+Chain 1: Iteration: 1000 / 2000 [ 50%] Iteration
+Chain 1: Iteration: 1001 / 2000 [ 50%] Iteration: 
+Chain 1: Iteration: 1200 / 2000 [ 60%] Iteration: 
+Chain 1: Iteration: 1400 / 2000 [ 70%] Iteration: 
+Chain 1: Iteration: 1600 / 2000 [ 80%] Iteration: 
+Chain 1: Iteration: 1800 / 2000 [ 90%] Iteration: 
+Chain 1: Iteration: 2000 / 2000 [100%] Iteration: 
+Chain 1: 
+Chain 1:  Elapsed Time: 17.441 seconds  Elapsed 
+Chain 1:                8.883 seconds (         
+Chain 1:                26.324 seconds        
+Chain 1: 
 
-      AIC convergence
- 14165.13           1
-                                                                                                                                            formula
- Surprisal.head ~ 1 + regularity * plurality + (1 + plurality | model) + (1 + regularity_num || set) + (1 + regularity_num * plurality_num || Head)
-                   family
- model_|__set_||__Head_||
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 0.000Gradient e
+Chain 2: 1000 transitions using 10 leap1000 transitions using 10 leapfrog steps per tran
+Chain 2: Adjust your expectations accorAdjust 
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:    1 / 2000 [  0%] Iteration
+Chain 2: Iteration:  200 / 2000 [ 10%] Iteration
+Chain 2: Iteration:  400 / 2000 [ 20%] Iteration
+Chain 2: Iteration:  600 / 2000 [ 30%] Iteration
+Chain 2: Iteration:  800 / 2000 [ 40%] Iteration
+Chain 2: Iteration: 1000 / 2000 [ 50%] Iteration
+Chain 2: Iteration: 1001 / 2000 [ 50%] Iteration: 
+Chain 2: Iteration: 1200 / 2000 [ 60%] Iteration: 
+Chain 2: Iteration: 1400 / 2000 [ 70%] Iteration: 
+Chain 2: Iteration: 1600 / 2000 [ 80%] Iteration: 
+Chain 2: Iteration: 1800 / 2000 [ 90%] Iteration: 
+Chain 2: Iteration: 2000 / 2000 [100%] Iteration: 
+Chain 2: 
+Chain 2:  Elapsed Time: 18.513 seconds  Elapsed 
+Chain 2:                8.884 seconds (         
+Chain 2:                27.397 seconds        
+Chain 2: 
 
---- SELECTED MODEL: Normal references ---
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+Chain 3: 
+Chain 3: Gradient evaluation took 0.000Gradient ev
+Chain 3: 1000 transitions using 10 leap1000 transitions using 10 leapfrog steps per trans
+Chain 3: Adjust your expectations accorAdjust 
+Chain 3: 
+Chain 3: 
+Chain 3: Iteration:    1 / 2000 [  0%] Iteration
+Chain 3: Iteration:  200 / 2000 [ 10%] Iteration
+Chain 3: Iteration:  400 / 2000 [ 20%] Iteration
+Chain 3: Iteration:  600 / 2000 [ 30%] Iteration
+Chain 3: Iteration:  800 / 2000 [ 40%] Iteration
+Chain 3: Iteration: 1000 / 2000 [ 50%] Iteration
+Chain 3: Iteration: 1001 / 2000 [ 50%] Iteration: 
+Chain 3: Iteration: 1200 / 2000 [ 60%] Iteration: 
+Chain 3: Iteration: 1400 / 2000 [ 70%] Iteration: 
+Chain 3: Iteration: 1600 / 2000 [ 80%] Iteration: 
+Chain 3: Iteration: 1800 / 2000 [ 90%] Iteration: 
+Chain 3: Iteration: 2000 / 2000 [100%] Iteration: 
+Chain 3: 
+Chain 3:  Elapsed Time: 17.002 seconds  Elapsed 
+Chain 3:                9.058 seconds (         
+Chain 3:                26.06 seconds (      
+Chain 3: 
 
-AIC: 14165.13  | convergence: 1  | singular: FALSE 
-Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 + plurality | model) + ((1 | set) + (0 + regularity_num | set)) + ((1 | Head) + (0 + regularity_num | Head) + (0 + plurality_num | Head) + (0 + regularity_num:plurality_num | Head)) 
-
-                                      Estimate Std. Error      df t value Pr(>|t|)
-(Intercept)                            14.6749     0.6182 18.2868 23.7381   0.0000
-regularityIrregular                    -0.4136     0.1405 16.4104 -2.9444   0.0093
-pluralitySingular                      -0.9880     0.1904 17.0699 -5.1897   0.0001
-regularityIrregular:pluralitySingular   0.7319     0.1400 16.0122  5.2276   0.0001
-
-
---- SELECTED MODEL: Inverted references ---
-
-AIC: 14165.13  | convergence: 1  | singular: FALSE 
-Formula used: Surprisal.head ~ 1 + regularity * plurality + (1 + plurality | model) + ((1 | set) + (0 + regularity_num | set)) + ((1 | Head) + (0 + regularity_num | Head) + (0 + plurality_num | Head) + (0 + regularity_num:plurality_num | Head)) 
-
-                                  Estimate Std. Error      df t value Pr(>|t|)
-(Intercept)                        14.0052     0.6424 21.2577 21.7998   0.0000
-regularityRegular                  -0.3183     0.1731 15.5120 -1.8386   0.0852
-pluralityPlural                     0.2561     0.2156 18.6269  1.1879   0.2498
-regularityRegular:pluralityPlural   0.7319     0.1400 16.0123  5.2276   0.0001
-
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+Chain 4: 
+Chain 4: Gradient evaluation took 0.000Gradient ev
+Chain 4: 1000 transitions using 10 leap1000 transitions using 10 leapfrog steps per trans
+Chain 4: Adjust your expectations accorAdjust 
+Chain 4: 
+Chain 4: 
+Chain 4: Iteration:    1 / 2000 [  0%] Iteration
+Chain 4: Iteration:  200 / 2000 [ 10%] Iteration
+Chain 4: Iteration:  400 / 2000 [ 20%] Iteration
+Chain 4: Iteration:  600 / 2000 [ 30%] Iteration
+Chain 4: Iteration:  800 / 2000 [ 40%] Iteration
+Chain 4: Iteration: 1000 / 2000 [ 50%] Iteration
+Chain 4: Iteration: 1001 / 2000 [ 50%] Iteration: 
+Chain 4: Iteration: 1200 / 2000 [ 60%] Iteration: 
+Chain 4: Iteration: 1400 / 2000 [ 70%] Iteration: 
+Chain 4: Iteration: 1600 / 2000 [ 80%] Iteration: 
+Chain 4: Iteration: 1800 / 2000 [ 90%] Iteration: 
+Chain 4: Iteration: 2000 / 2000 [100%] Iteration: 
+Chain 4: 
+Chain 4:  Elapsed Time: 16.144 seconds  Elapsed 
+Chain 4:                8.814 seconds (         
+Chain 4:                24.958 seconds        
+Chain 4: 
+b ~ (flat)
+b_pluralitySingulab ~ (flat)
+b_pluralitySingular ~ (flat)
+b_regularityIrregular ~ (flat)
+b_regularityIrregular:pluralitySingular ~ (flat)
+Intercept ~ student_t(3, 13.7, 2.6)
+L ~ lkj_corr_cholesky(1)
+L_model_ ~ lkj_corr_cholesky(1)
+<lower=0> sd ~ student_t(3, 0, 2.6)
+<lower=0> sd_model_ ~ student_t(3, 0, 2.6)
+<lower=0> sd_model__Intercept ~ student_t(3, 0, 2.6)
+<lower=0> sd_model__pluralitySingular ~ student_t(3, 0, 2.6)
+<lower=0> sd_model__regularityIrregular ~ student_t(3, 0, 2.6)
+<lower=0> sd_model__regularityIrregular:pluralitySingular ~ student_t(3, 0, 2.6)
+<lower=0> sigma ~ student_t(3, 0, 2.6)
