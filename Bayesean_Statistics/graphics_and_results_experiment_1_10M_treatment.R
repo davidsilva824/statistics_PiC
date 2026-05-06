@@ -9,7 +9,7 @@ m <- readRDS("C:/Users/Admin/Desktop/Dissertação/código/satistics_PiC/Statist
 
 summary(m)
 
-### Main effect graphic
+### Main effect graphic: plurality on x-axis, regularity in legend
 
 p <- ggeffects::ggemmeans(m, c("plurality", "regularity"))
 p$x <- factor(p$x, levels = c("Singular", "Plural"))
@@ -49,6 +49,60 @@ p <- ggplot(
 
 print(p)
 
+ggsave(
+  "plot_plurality_x_regularity_legend.png",
+  plot = p,
+  width = 8,
+  height = 6,
+  dpi = 300
+)
+
+### Alternative graphic: regularity on x-axis, plurality in legend
+
+p <- ggeffects::ggemmeans(m, c("regularity", "plurality"))
+p$x <- factor(p$x, levels = c("Regular", "Irregular"))
+
+m_preds <- as.data.frame(p)
+
+y_pad <- 0.05 * (max(m_preds$conf.high) - min(m_preds$conf.low))
+
+p <- ggplot(
+  m_preds,
+  aes(x = x, y = predicted, colour = group)
+) +
+  geom_point(size = 3, position = pd) +
+  geom_errorbar(
+    aes(ymin = conf.low, ymax = conf.high),
+    width = 0,
+    linewidth = 0.8,
+    position = pd
+  ) +
+  coord_cartesian(
+    ylim = c(min(m_preds$conf.low) - y_pad, max(m_preds$conf.high) + y_pad)
+  ) +
+  labs(
+    x = "Regularity",
+    y = "Surprisal",
+    colour = "Plurality"
+  ) +
+  theme_light() +
+  theme(
+    text = element_text(size = 14, colour = "gray28"),
+    axis.title = element_text(size = 19),
+    axis.text = element_text(size = 18),
+    legend.title = element_text(size = 19),
+    legend.text = element_text(size = 18)
+  )
+
+print(p)
+
+ggsave(
+  "plot_regularity_x_plurality_legend.png",
+  plot = p,
+  width = 8,
+  height = 6,
+  dpi = 300
+)
 
 ### Interaction graphic per model
 
